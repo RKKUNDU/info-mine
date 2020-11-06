@@ -70,7 +70,7 @@ class Students:
         Following things are shown for each student normally:
             ['User ID', 'Name']
         Output:
-            Print in the mentioned format or print "No student found with this filter. Please try with some other filter" if there is no courses found
+            Print in the mentioned format or print "No student found with this filter. Please try with some other filter" if there is no student found
         '''
         # nothing to filter
         if not (filters_name or filters_advisor or filters_interests):

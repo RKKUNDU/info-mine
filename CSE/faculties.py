@@ -1,6 +1,5 @@
 import requests
 import json
-from pprint import pprint
 from tabulate import tabulate
 url = "https://www.cse.iitb.ac.in/~internal-live/api/faculty/?format=json"
 
@@ -88,7 +87,7 @@ class Faculties:
         Following things are shown for each faculy normally:
             ['User ID', 'Name']
         Output:
-            Print in the mentioned format or print "No faculty found with this filter. Please try with some other filter" if there is no courses found
+            Print in the mentioned format or print "No faculty found with this filter. Please try with some other filter" if there is no faculty found
         '''
         # nothing to filter
         if not (filters_name or filters_interests):
