@@ -1,5 +1,6 @@
 from cryptography.fernet import Fernet 
-
+import sys
+sys.path.append('../')
 class Key:
     '''
     self.key is in bytes
