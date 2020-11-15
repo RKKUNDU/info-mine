@@ -74,8 +74,3 @@ class Assignments:
             
         print(tabulate(table, headers = ['sl No', 'Course Name','Assignment', 'Due Date']))
 
-# c = Assignments()
-# # c.show_all_assignments()
-# c.show_all_due_assignments()
-# # x = input("Enter course id: ")
-# # c.show_all_quizzes()

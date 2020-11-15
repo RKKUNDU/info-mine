@@ -16,7 +16,6 @@ class discussion_forums:
         token, userid = utils.get_credential()
         payload = {'wstoken': token,'wsfunction':'mod_forum_get_forums_by_courses','courseids[0]': course_id}
         res = requests.post('https://moodle.iitb.ac.in/webservice/rest/server.php?moodlewsrestformat=json',data=payload)
-        # print(res)
         table = []
         i = 1
         for x in json.loads(res.text):
@@ -28,6 +27,3 @@ class discussion_forums:
         
         print(tabulate(table, headers = ["Forum ID", "Forum Name"]))
 
-# c = discussion_forums()
-# x = input("Enter course id: ")
-# c.show_course_discussion_forums(x, 5)

@@ -39,7 +39,3 @@ class Quizzes:
             
         print(tabulate(table, headers = ['sl No', 'Course id', 'id', 'Name', 'Total Score', 'Quiz Opens', 'Quiz Closes']))
     
-# c = Quizzes()
-# x = input("Enter course id: ")
-# c.show_quizzes(x)
-# c.show_all_quizzes()

@@ -130,11 +130,11 @@ class Students:
         except Exception as err:
             print(f"Error: {err}")
         finally:
-            if with_advisor and with_interests:
+            if with_advisor and with_interests and cnt > 0:
                 print(tabulate(table, headers = ['User ID', 'Name', 'Advisor', 'Interests']))
-            elif with_advisor:
+            elif with_advisor and cnt > 0:
                 print(tabulate(table, headers = ['User ID', 'Name', 'Advisor']))
-            elif with_interests:
+            elif with_interests and cnt > 0:
                 print(tabulate(table, headers = ['User ID', 'Name', 'Interests']))
             elif cnt > 0:
                 print(tabulate(table, headers = ['User ID', 'Name']))

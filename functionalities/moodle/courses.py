@@ -27,5 +27,3 @@ class Courses:
         
         print(tabulate(table, headers = ['sl No', 'Course id', 'Progress', 'Short Name', 'Full Name']))
 
-# c = Courses()
-# c.show_courses()

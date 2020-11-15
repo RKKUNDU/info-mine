@@ -26,6 +26,3 @@ class Discussions:
             print('{}'.format(bs(x['message'],'html.parser').get_text()),end='\n\n')
             i += 1    
 
-# c = Discussions()
-# x = input("Enter forum id: ")
-# c.show_discussions_from_a_forum(x, 5)

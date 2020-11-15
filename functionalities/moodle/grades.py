@@ -27,6 +27,3 @@ class Grades:
         
         print(tabulate(table, headers = ['sl No', 'Grade','Max', 'Percentage']))
     
-# c = Grades()
-# x = input("Enter course id: ")
-# c.show_grades(x)

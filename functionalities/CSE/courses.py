@@ -136,5 +136,3 @@ class Courses:
             elif not (with_details or with_description or with_prereqs or with_textrefs) or cnt == 0:
                 print("No courses found with this filter. Please try with some other filter")
 
-# obj = Courses()
-# obj.show_courses()

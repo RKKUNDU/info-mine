@@ -18,7 +18,6 @@ class Announcements:
 
         res = requests.post('https://moodle.iitb.ac.in/webservice/rest/server.php?moodlewsrestformat=json',data=payload)
         
-        # print(pprint(json.loads(res.text)))
         id = None
         for x in json.loads(res.text):
             if 'announce' in x['name'].lower():
@@ -36,14 +35,8 @@ class Announcements:
             for x in json.loads(res.text)['discussions']:
                 if n is not None and int(n) < i:
                     break
-                # print(x)
-                # # print(x.keys())
-                # exit(1)
 
                 print("\t",f"{i}.", datetime.fromtimestamp(x['created']), x['name'])
                 print('{}'.format(bs(x['message'],'html.parser').get_text()),end='\n\n')
                 i += 1    
 
-# c = Announcements()
-# x = input("Enter course id: ")
-# c.show_course_announcements(x, 5)
