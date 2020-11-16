@@ -13,7 +13,7 @@ from security.keys import Key
 from security.moodle_credentials import moodle_credential
 
 class Assignments:
-    def show_assignments(self, course):
+    def show_assignments(self, course, show_only_due):
         course = course.lower()
         token, userid = utils.get_credential()
         payload = {'wstoken': token,'wsfunction': 'mod_assign_get_assignments'}
@@ -26,6 +26,10 @@ class Assignments:
             i = 1
             if course in x['shortname' ].lower() or course in x['fullname'].lower():
                 for assignment in x['assignments']:
+                    # assignment is not due
+                    if show_only_due and datetime.fromtimestamp(assignment['duedate']) < datetime.fromtimestamp(time.time()):
+                        continue
+
                     table.append([i, x['shortname'], assignment['name'], datetime.fromtimestamp(assignment['duedate'])])
                     i += 1
                 table.append([])

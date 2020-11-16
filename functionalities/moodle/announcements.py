@@ -6,6 +6,7 @@ from tabulate import tabulate
 from datetime import datetime 
 import sys
 sys.path.append("../../")
+sys.path.append("functionalities/moodle/")
 
 from utility import utils
 from security.keys import Key

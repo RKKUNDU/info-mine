@@ -2,7 +2,7 @@ from security.keys import Key
 import requests
 from bs4 import BeautifulSoup as bs
 import json
-PATH = '../../configs/' # set the path wrt to the calling function
+PATH = 'configs/' # set the path wrt to the calling function
 class moodle_credential:
     def __init__(self):
         self.key = Key()
