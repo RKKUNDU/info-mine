@@ -8,7 +8,7 @@ import sys
 from security.dept_credentials import dept_credentials
 
 class search_date:
-    def date_(self,date1,date2):
+    def date_(self,date1,date2,limit=5):
         try:
             s1 = str(date1)
             s2 = str(date2)
@@ -52,6 +52,7 @@ class search_date:
                                 subject = subject.decode()
                             # email sender
                             from_ = msg.get("From")
+                            dt=msg.get("Date")
                             date_ = str(msg.get("Date"))[0:16]
                             if date_[7]!=' ':
                                 date_=date_[0:5]+'0'+date_[5:15]
@@ -60,7 +61,7 @@ class search_date:
                                 raise StopIteration
                         
                             if date_dt1 >= t1 and date_dt1 <=t2 :
-                                if j >=5:
+                                if j >=limit:
                                     raise StopIteration
                                 
                                 j=j+1
@@ -71,7 +72,11 @@ class search_date:
                                 print("="*200)
                                 print('\n')
                                 print("Subject:", subject)
+                                print('\n')
+                                print("Date:", dt)
+                                print('\n')
                                 print("From:", from_)
+                                print('\n')
                                 # if the email message is multipart
                                 if msg.is_multipart():
                                     # iterate over email parts
