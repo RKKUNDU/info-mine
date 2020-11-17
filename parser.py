@@ -15,6 +15,21 @@ from functionalities.moodle.forums import discussion_forums
 from functionalities.moodle.grades import Grades
 from functionalities.moodle.quizzes import Quizzes
 
+from functionalities.insti_mail.Search_topn import search_topn
+from functionalities.insti_mail.Search_from import search_from
+from functionalities.insti_mail.Search_keyword import search_keyword
+from functionalities.insti_mail.Search_sub import search_sub
+from functionalities.insti_mail.Search_date import search_date
+from functionalities.insti_mail.Send_email import send_mail
+
+from functionalities.dept_mail.Search_topn import search_topn as dsearch_topn
+from functionalities.dept_mail.Search_from import search_from as dsearch_from
+from functionalities.dept_mail.Search_keyword import search_keyword as dsearch_keyword
+from functionalities.dept_mail.Search_sub import search_sub as dsearch_sub
+from functionalities.dept_mail.Search_date import search_date as dsearch_date
+from functionalities.dept_mail.Send_email import send_mail as dsend_mail
+
+
 
 # top-level parser
 parser = argparse.ArgumentParser()
@@ -40,19 +55,14 @@ dmail_parser = subparsers.add_parser('dmail', help='Commands for department emai
 
 # create sub-parser for 'cse' command
 cse_subparsers = cse_parser.add_subparsers(dest='cse_command', help='CSE commands help')
-
 # create the sub-parser for the "courses" command
 courses_parser = cse_subparsers.add_parser('courses', help='Info about courses')
-
 # create the parser for the "students" command
 students_parser = cse_subparsers.add_parser('students', help='Info about students')
-
 # create the parser for the "faculties" command
 faculties_parser = cse_subparsers.add_parser('faculties', help='Info about faculties')
-
 # create the parser for the "news" command
 news_parser = cse_subparsers.add_parser('news', help='Get news')
-
 
 # arguments for 'courses' sub-command
 courses_parser.add_argument('-a', '--autumn', action='store_true', help="Show courses from Autumn semester")
@@ -87,9 +97,55 @@ faculties_parser.add_argument('-I', '--Interest', action='store', help='filter f
 group = news_parser.add_mutually_exclusive_group()
 news_parser.add_argument('-d', '--details', action='store_true', help='Show detailed news')
 group.add_argument('-t', '--timeline', action='store', help='Show news in a timeline (DDMMYYYY DDMMYYYY)', nargs=2)    
-group.add_argument('-y', '--year', action='store', help='Show news of a year')    
+group.add_argument('-y', '--year', action='store', help='Show news of a year')  
 
+# ------------------------------------------------------ Mail --------------------------------------------------------------
 
+# create sub-parser for IITB mail command  for send and search
+mail_subparsers = mail_parser.add_subparsers(dest='mail_command', help='IITB Mail commands help')
+search_mail_parser = mail_subparsers.add_parser('search',help='Search Email from IITB Mailbox using filters')
+send_mail_parser = mail_subparsers.add_parser('send', help='Send Email from IITB Mail adding attachments ')
+
+#add arguements to search in IITB mail
+search_mail_parser.add_argument('-n', '--number', action='store', help='Show Top n mails in IITB Mailbox')
+search_mail_parser.add_argument('-k', '--keyword', action='store', help='Search in body of mail using keyword in IITB Mailbox')
+search_mail_parser.add_argument('-f', '--from_', action='store', help='Search using From/Senders mail address in IITB Mailbox')
+search_mail_parser.add_argument('-s', '--subject', action='store', help="Search using ubject in IITB Mailbox / substring match also possible")
+search_mail_parser.add_argument('-t', '--timeline', action='store', help='Search using timeline  in IITB Mailbox format DDMMYYYY DDMMYYYY', nargs=2)
+
+#add arguements to send from IITB mail
+send_mail_parser.add_argument('-to','--targets',type=str,action='store', help='Enter target email address as a  STRINGS separated by comma to send from IITB Mailbox')
+send_mail_parser.add_argument('-sub','--subject',type=str,action='store', help='Enter Subject of email to send from IITB Mailbox')
+send_mail_parser.add_argument('-b','--body',type=str,action='store', help='Enter Body of email to send from IITB  Mailbox')
+send_mail_parser.add_argument('-cc','--carboncopy',type=str,action='store', help='Enter CC address as a STRINGS separated by comma to send from IITB  Mailbox')
+send_mail_parser.add_argument('-bcc','--blindcarboncopy',type=str,action='store', help='Enter BCC address as a  STRINGS separated by comma to send from IITB  Mailbox')
+send_mail_parser.add_argument('-a','--attach',action='store_true', help='Enable attachments for email to send from IITB  Mailbox')
+send_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter attachments file path for email to send from IITB  Mailbox')
+
+# ------------------------------------------------------ Dmail --------------------------------------------------------------
+
+# create sub-parser for CSE Ldap mail command  for send and search
+dmail_subparsers = dmail_parser.add_subparsers(dest='dmail_command', help='CSE Ldap Mail commands help')
+dsearch_mail_parser = dmail_subparsers.add_parser('search',help='Search Email from CSE Ldap using filters')
+dsend_mail_parser = dmail_subparsers.add_parser('send', help='Send Email from CSE Ldap Mail adding attachments ')
+
+#add arguements to search in CSE Ldap mail
+dsearch_mail_parser.add_argument('-n', '--number', action='store', help='Show Top n mails in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-k', '--keyword', action='store', help='Search in body of mail using keyword in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-f', '--from_', action='store', help='Search using From/Senders mail address in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-s', '--subject', action='store', help="Search using ubject in CSE LdapMailbox / substring match also possible")
+dsearch_mail_parser.add_argument('-t', '--timeline', action='store', help='Search using timeline  in CSE Ldap Mailbox format DDMMYYYY DDMMYYYY', nargs=2)
+
+#add arguements to send from CSE Ldap mail
+dsend_mail_parser.add_argument('-to','--targets',type=str,action='store', help='Enter target email address as a  STRINGS separated by comma to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-sub','--subject',type=str,action='store', help='Enter Subject of email to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-b','--body',type=str,action='store', help='Enter Body of email to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-cc','--carboncopy',type=str,action='store', help='Enter CC address as a STRINGS separated by comma to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-bcc','--blindcarboncopy',type=str,action='store', help='Enter BCC address as a STRINGS separated by comma to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-a','--attach',action='store_true', help='Enable attachments for email to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter attachments file path for email to send from CSE Ldap Mailbox')
+
+  
 # ---------------------------------------------------- Moodle ------------------------------------------------------------
 
 # create sub-parser for 'moodle' command
@@ -137,7 +193,7 @@ assignments_parser.add_argument('-c', '--course', action='store', help='Filter f
 
 args = parser.parse_args()
 
-# cse command is used
+# Top level parser is cse
 if args.portal == 'cse':
     if args.cse_command == 'courses':
         c = Courses()
@@ -149,7 +205,7 @@ if args.portal == 'cse':
                                 in_autumn = args.autumn, in_spring = args.spring)
         # when semester not given, show courses of both semester
         else:
-            c.show_filtered_courses(args.filter, with_details = args.details, with_description = args.description,
+            c.show_filtered_courses(args.filter, with_detailsmoodle = args.details, with_description = args.description,
                                 with_prereqs = args.prereqs, with_textrefs = args.textrefs)
 
     elif args.cse_command == 'students':
@@ -197,6 +253,7 @@ if args.portal == 'cse':
             n.show_news_in_a_year(datetime.datetime.now().year, with_details=args.details)
     else:
         cse_parser.print_help()
+# Top level parser is moodle
 elif args.portal == 'moodle':
     if args.moodle_command == 'quizzes':
         q = Quizzes()
@@ -230,3 +287,125 @@ elif args.portal == 'moodle':
                 a.show_all_assignments()
     else:
         moodle_parser.print_help()
+# Top level parser is mail
+elif args.portal == 'mail':
+    #Second level parser is search
+    if args.mail_command == 'search':
+        # mail search -n and -k
+        if args.keyword is not None:  
+            if args.number is not None:
+                obj = search_keyword()
+                obj.keyword(str(args.keyword),limit=int(args.number))
+            # mail search  -k
+            else: 
+                obj = search_keyword()
+                obj.keyword(str(args.keyword))
+        elif args.subject is not None:
+            # mail search -n and -s
+            if args.number is not None:
+                obj = search_sub()
+                obj.subject(str(args.subject),limit=int(args.number))
+            # mail search -s
+            else:
+                obj = search_sub()
+                obj.subject(str(args.subject))
+        elif args.from_ is not None:
+            # mail search -n and -f
+            if args.number is not None:
+                obj = search_from()
+                obj.from_(str(args.from_),limit=int(args.number))
+            # mail search -f
+            else:
+                obj = search_from()
+                obj.from_(str(args.from_))
+        elif args.timeline is not None:
+            # mail search -n and -t
+            if args.number is not None:
+                obj = search_date()
+                obj.date_(args.timeline[0], args.timeline[1],limit=int(args.number))
+            # mail search -t
+            else:
+                obj = search_date()
+                obj.date_(args.timeline[0], args.timeline[1])   
+        # mail search -n    
+        elif args.number is not None:
+            obj = search_topn()
+            obj.top(N=int(args.number))
+        else :
+            send_mail_parser.print_help
+    #Second level parser is send
+    elif args.mail_command =='send':
+        if args.targets is not None and args.subject is not None:
+            if args.attach is False:
+                obj=send_mail()
+                obj.send_m(targets=args.targets,subject=args.subject,body=args.body,cc=args.carboncopy,bcc=args.blindcarboncopy,attach=False)
+            elif args.attach is True and args.filepath is not None :
+                obj=send_mail()
+                obj.send_m(targets=args.targets,subject=args.subject,body=args.body,cc=args.carboncopy,bcc=args.blindcarboncopy,attach=True,filepath=args.filepath)
+            else :
+                send_mail_parser.print_help
+        else :
+            mail_parser.print_help
+
+# Top level parser is dmail
+elif args.portal == 'dmail':
+    #Second level parser is search
+    if args.dmail_command == 'search':
+        if args.keyword is not None:
+            # dmail search -n and -k
+            if args.number is not None:
+                obj = dsearch_keyword()
+                obj.keyword(str(args.keyword),limit=int(args.number))
+            # dmail search -k
+            else: 
+                obj = dsearch_keyword()
+                obj.dkeyword(str(args.keyword))
+        elif args.subject is not None:
+            # dmail search -n and -s
+            if args.number is not None:
+                obj = dsearch_sub()
+                obj.subject(str(args.subject),limit=int(args.number))
+            # dmail search -s
+            else:
+                obj = dsearch_sub()
+                obj.subject(str(args.subject))
+        elif args.from_ is not None:
+            # dmail search -n and -f
+            if args.number is not None:
+                obj = dsearch_from()
+                obj.from_(str(args.from_),limit=int(args.number))
+            # dmail search -f
+            else:
+                obj = dsearch_from()
+                obj.from_(str(args.from_))
+        elif args.timeline is not None:
+            # dmail search -n and -t
+            if args.number is not None:
+                obj = dsearch_date()
+                obj.date_(args.timeline[0], args.timeline[1],limit=int(args.number))
+            # dmail search -t
+            else:
+                obj = dsearch_date()
+                obj.date_(args.timeline[0], args.timeline[1])
+        # dmail search -n 
+        elif args.number is not None:
+            obj = dsearch_topn()
+            obj.top(N=int(args.number))
+        
+        else :
+            send_mail_parser.print_help
+    #Second level parser is send
+    elif args.dmail_command =='send':
+        if args.targets is not None and args.subject is not None:
+            if args.attach is False:
+                obj=dsend_mail()
+                obj.send_m(targets=args.targets,subject=args.subject,body=args.body,cc=args.carboncopy,bcc=args.blindcarboncopy,attach=False)
+            elif args.attach is True and args.filepath is not None :
+                obj=dsend_mail()
+                obj.send_m(targets=args.targets,subject=args.subject,body=args.body,cc=args.carboncopy,bcc=args.blindcarboncopy,attach=True,filepath=args.filepath)
+            else :
+                dsend_mail_parser.print_help
+        else:
+            dmail_parser.print_help
+
+    
