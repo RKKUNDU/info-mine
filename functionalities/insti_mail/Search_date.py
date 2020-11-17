@@ -5,7 +5,7 @@ import webbrowser
 import os
 import datetime
 import sys
-from security.insti_credentials import insti_credentialsl
+from security.insti_credentials import insti_credentials
 
 class search_date:
     def date_(self,date1,date2):
