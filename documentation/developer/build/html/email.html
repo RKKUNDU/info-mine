@@ -44,20 +44,145 @@
             
   <div class="section" id="email">
 <h1>Email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sending-emails">
-<h2>Sending emails<a class="headerlink" href="#sending-emails" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>infomine -email -S [subject] [body]</li>
+<div class="section" id="institute-mail">
+<h2>Institute mail<a class="headerlink" href="#institute-mail" title="Permalink to this headline">¶</a></h2>
+<p>The institute mail has five classes for searching the email based on different mechanisms/flags. It has one class to send the email with the respective flags. For the first time usage, the user is asked for his/her credentials. These credentials are encrypted and stored on the local system of the user in a file under the configs folder. Incase the user enters the wrong credentials, the credentials are not stored and no request is made. Please use the “security” module to encrypt and decrypt the creds. Here is a list of the classes available in the institute mail component.</p>
+<div class="section" id="searching-for-mails">
+<h3>Searching for mails<a class="headerlink" href="#searching-for-mails" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><b>Search_Date</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">This function searches for email within the specified timeline between date1 as the starting time and date2 as the finish time</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_from</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sender</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">This function searches for mail based on the substring of the &#39;sender&#39; variable</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_keyword</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function searches for email based on the key variable passed by the user, it will try to match any substring present in the key variable</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_sub</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sub</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function searches for email based on the subject of the mails, and tries to match any substring with the the value present in the &#39;sub&#39; variable.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_topn</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function fetches the top n latest mails, where n is an integer.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="receiving-emails">
-<h2>Receiving emails<a class="headerlink" href="#receiving-emails" title="Permalink to this headline">¶</a></h2>
-<p>``</p>
-<p>print(“Hello”)</p>
-<p>``</p>
+<div class="section" id="sending-mails">
+<h3>Sending mails<a class="headerlink" href="#sending-mails" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>infomine -email -R</li>
+<li>This is a standalone script ‘Send_mail.py’ which will send the email based on the flags passed to it.</li>
 </ul>
+</div>
+</div>
+<div class="section" id="department-mail">
+<h2>Department mail<a class="headerlink" href="#department-mail" title="Permalink to this headline">¶</a></h2>
+<p>The department mail has five classes for searching the email based on different mechanisms/flags. It has one class to send the email with the respective flags. For the first time usage, the user is asked for his/her credentials. These credentials are encrypted and stored on the local system of the user in a file under the configs folder. Incase the user enters the wrong credentials, the credentials are not stored and no request is made. Please use the “security” module to encrypt and decrypt the creds. Here is a list of the classes available in the department mail component.</p>
+<div class="section" id="id1">
+<h3>Searching for mails<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><b>Search_Date</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">This function searches for email within the specified timeline between date1 as the starting time and date2 as the finish time</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_from</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sender</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">This function searches for mail based on the substring of the &#39;sender&#39; variable</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_keyword</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function searches for email based on the key variable passed by the user, it will try to match any substring present in the key variable</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_sub</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sub</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function searches for email based on the subject of the mails, and tries to match any substring with the the value present in the &#39;sub&#39; variable.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>Search_topn</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function fetches the top n latest mails, where n is an integer.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Sending mails<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>This is a standalone script ‘Send_mail.py’ which will send the email based on the flags passed to it.</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -72,8 +197,16 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moodle.html">Moodle</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Email</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sending-emails">Sending emails</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receiving-emails">Receiving emails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#institute-mail">Institute mail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#searching-for-mails">Searching for mails</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-mails">Sending mails</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#department-mail">Department mail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Searching for mails</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Sending mails</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cse.html">CSE</a></li>

@@ -2,20 +2,20 @@
 \contentsline {subsection}{\numberline {1.1}Motivation}{3}%
 \contentsline {subsection}{\numberline {1.2}Installation}{3}%
 \contentsline {section}{\numberline {2}Moodle}{4}%
-\contentsline {subsection}{\numberline {2.1}quizzes}{4}%
-\contentsline {subsection}{\numberline {2.2}grades}{5}%
-\contentsline {subsection}{\numberline {2.3}forums}{5}%
-\contentsline {subsection}{\numberline {2.4}discussions}{6}%
-\contentsline {subsection}{\numberline {2.5}courses}{6}%
-\contentsline {subsection}{\numberline {2.6}announcements}{7}%
-\contentsline {subsection}{\numberline {2.7}assignments}{7}%
-\contentsline {section}{\numberline {3}CSE}{9}%
-\contentsline {subsection}{\numberline {3.1}courses}{9}%
-\contentsline {subsection}{\numberline {3.2}students}{11}%
-\contentsline {subsection}{\numberline {3.3}faculties}{12}%
-\contentsline {subsection}{\numberline {3.4}news}{12}%
-\contentsline {section}{\numberline {4}Mail}{14}%
-\contentsline {subsection}{\numberline {4.1}Sending mail}{14}%
-\contentsline {subsection}{\numberline {4.2}Receiving mail}{14}%
-\contentsline {section}{\numberline {5}Whatsapp bot}{16}%
-\contentsline {section}{\numberline {6}Future scope}{17}%
+\contentsline {subsection}{\numberline {2.1}Quizzes}{4}%
+\contentsline {subsection}{\numberline {2.2}Grades}{5}%
+\contentsline {subsection}{\numberline {2.3}Forums}{6}%
+\contentsline {subsection}{\numberline {2.4}Discussions}{7}%
+\contentsline {subsection}{\numberline {2.5}Courses}{8}%
+\contentsline {subsection}{\numberline {2.6}Announcements}{8}%
+\contentsline {subsection}{\numberline {2.7}Assignments}{9}%
+\contentsline {section}{\numberline {3}CSE}{11}%
+\contentsline {subsection}{\numberline {3.1}Courses}{11}%
+\contentsline {subsection}{\numberline {3.2}Students}{14}%
+\contentsline {subsection}{\numberline {3.3}Faculties}{15}%
+\contentsline {subsection}{\numberline {3.4}News}{16}%
+\contentsline {section}{\numberline {4}Mail}{17}%
+\contentsline {subsection}{\numberline {4.1}Sending mail}{17}%
+\contentsline {subsection}{\numberline {4.2}Searching mail}{17}%
+\contentsline {section}{\numberline {5}Whatsapp Bot}{19}%
+\contentsline {section}{\numberline {6}Future scope}{20}%

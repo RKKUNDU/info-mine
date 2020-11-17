@@ -18,7 +18,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Email" href="email.html" /> 
+    <link rel="prev" title="CSE" href="cse.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,7 +27,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="email.html" title="Email"
+          <a href="cse.html" title="CSE"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
       </ul>
@@ -40,6 +40,68 @@
             
   <div class="section" id="whatsapp-bot">
 <h1>Whatsapp Bot<a class="headerlink" href="#whatsapp-bot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="registration">
+<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this headline">¶</a></h2>
+<p>The front end, where a user registers is present in the:<br /><b>/infomine/mysite/template/index.html</b><br /></br>Front end for a user update is present in the:<br /><b>/infomine/mysite/template/update.html</b></p>
+</div>
+<div class="section" id="backend">
+<h2>Backend<a class="headerlink" href="#backend" title="Permalink to this headline">¶</a></h2>
+<p>The views.py file for registration present in<br /><b>/infomine/mysite/usersapi/views.py</b>.</p>
+<p>The entry point for a registration request into the server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">api</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This function handles the requests received by a client for registration or to fetch details of a user.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>The users class, through which a user’s creds are stored or retrieved.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Users</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">getLDAP</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Gets the LDAP creds of a user object.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">getCSEMail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Gets the CSE creds of a user object.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">getMoodle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Gets the moodle creds of a user object.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">load_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Load the previously generated key</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">decrypt_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">encrypted_message</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Decrypts an encrypted message</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>The whatsapp bot uses Twilio to receive messages, call a callback function, and to send the message back to the user that sent the whatsapp message. The processing of the messages happen in our Django framework.<br />Majority of the code for the command line tool is reused here to parse the requests by the user, hence the functions will remain the same as mentioned in the previous sections for moodle, email and cse.<br />When a message arrives from our Twilio sandbox account, it is processed by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">infomine</span><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">whatsappbot</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span> <span class="p">(</span><span class="ow">in</span> <span class="n">views</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span><span class="p">)</span>
+
+ <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+ <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"> This function receives the message, it sends the message to the parser which calls the one of the appropriate function availble in moodle, cse and email components</span>
+<span class="sd"> &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>The parser has to parse this request, the below function does this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">/</span><span class="n">infomine</span><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">whatsappbot</span><span class="o">/</span><span class="n">command_parser</span><span class="o">.</span><span class="n">py</span> <span class="p">(</span><span class="ow">in</span> <span class="n">command_parser</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span><span class="p">)</span>
+ <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">sender_whatsapp_no</span><span class="p">):</span>
+ <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"> This function determines what kind of a command has been sent as a whatsapp message and calls the appropriate function.</span>
+<span class="sd"> &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -53,12 +115,17 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moodle.html">Moodle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="email.html">Email</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Whatsapp Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cse.html">CSE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Whatsapp Bot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#registration">Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backend">Backend</a></li>
+</ul>
+</li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="email.html"
-                        title="previous chapter">Email</a></p>
+  <p class="topless"><a href="cse.html"
+                        title="previous chapter">CSE</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -89,7 +156,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="email.html" title="Email"
+          <a href="cse.html" title="CSE"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
       </ul>

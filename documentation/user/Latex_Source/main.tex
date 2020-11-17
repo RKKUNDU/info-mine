@@ -74,58 +74,110 @@ optional arguments:
 \end{minted}
     This provides the user with seven options from which he can choose to fetch his/her data.
     Let's start with quizzes.
-\subsection{quizzes}
-To get information on how to use the quizzes module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle quizzes -h}\\
-\\
+\subsection{Quizzes}
+To get information on how to use the quizzes module, the user can do so with a -h flag like
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle quizzes -h
+usage: parser.py moodle quizzes [-h] [-c CID]
+
+optional arguments:
+    -h, --help         show this help message and exit
+    -c CID, --cid CID  Show quizzes of given course
+\end{minted}
 As you can see from the usage, by providing no flags, the user will simply get a list of all the quizzes for all the courses he/she has registered.\\
 To get a list of the quizzes for a particular course, we need to use the -c flag with the course id(course id is with respect to moodle and can be found from the moodle courses module) we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle quizzes -c 219
-
+/home/user$: python3 parser.py moodle quizzes -c 222
+Sl No    Course id    id Name Total Score  Quiz Opens   Quiz Closes
+-------  -----------  ----  ----------------------------------------
+1          222    64  Quiz 6 2020-08-13 10:30:00  2020-08-16 23:59:00
+2          222   432  Quiz 7 2020-08-13 10:30:00 2020-08-16 23:59:00
 \end{minted}
 
-\subsection{grades}
-To get information on how to use the grades module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle grades -h}\\
-\\
+\subsection{Grades}
+To get information on how to use the grades module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle grades -h
+usage: parser.py moodle grades [-h] -c CID
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -c CID, --cid CID  Show grades of given course
+\end{minted}
 As you can see from the usage, by providing no flags, the user will simply get a list of all the grades for all the courses he/she has registered.\\
 To get a list of the grades for a particular course, we need to use the -c flag with the course id(course id is with respect to moodle and can be found from the moodle courses module) we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle grades -c 219
+/home/user$: python3 parser.py moodle grades -c 222
+sl No      Grade    Max  Percentage
+-------  ---------  -----  ------------
+      1                 6  -
+      2    7            9  77.78 %
+      3    4.33333      6  72.22 %
     
 \end{minted}
 
-\subsection{forums}
-To get information on how to use the forums module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle forums -h}\\
-\\
+\subsection{Forums}
+To get information on how to use the forums module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle forums -h
+usage: parser.py moodle forums [-h] -c CID
+                               [-n NUMBER]
+
+optional arguments:
+  -h, --help            show this help message and
+                        exit
+  -c CID, --cid CID     Show forums of given course
+  -n NUMBER, --number NUMBER
+                        Show only top n discussion
+                        forums
+\end{minted}
 For using the forums module we need to provide -c flag and provide the course id (course id is with respect to moodle and can be found from the moodle courses module), it is mandatory. The -n flag is to provide the top number of entries we want to filter and see in the output\\
 To get a list of 'n' forums for a course we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle forums -c 219 -n 5
-    
+/home/user$: python3 parser.py moodle forums -c 224 -n 2
+Forum ID  Forum Name
+----------  ----------------
+       223  Announcements
+      1159  Discussion Forum
 \end{minted}
 
-\subsection{discussions}
-To get information on how to use the discussions module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle discussions -h}\\
-\\
+\subsection{Discussions}
+To get information on how to use the discussions module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+usage: parser.py moodle discussions [-h] -f FORUM_ID [-n NUMBER]
+
+optional arguments:
+    -h, --help            show this help message and exit
+    -f FORUM_ID, --forum-id FORUM_ID
+                        Show discussions of given forum
+    -n NUMBER, --number NUMBER
+                        Show only top n discussions    
+\end{minted}
 For using the discussions module we need to provide -f flag and provide the forum id (forum id is with respect to moodle and can be found from the moodle forums module), it is mandatory to know which forum's discussion you are trying to fetch. The -n flag is to provide the top number of entries we want to filter and see in the output\\
 To get a list of 'n' discussions for a forum we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle discussions -f 219 -n 5
-    
+/home/user$: python3 parser.py moodle discussions -f 223 -n 2
+Discussions:
+         1. 2020-10-21 11:23:59 PA4 description posted
+Check out the next programming assignment. 
+
+         2. 2020-10-12 20:18:47 Midsem cribs
+For any issues regarding the marks/solutions in midsem please fill this form.https://forms.gle/bmgAjW6SmBXPCiH48
 \end{minted}
 
-\subsection{courses}
-To get information on how to use the courses module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle courses -h}\\
-\\
+\subsection{Courses}
+To get information on how to use the courses module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle courses -h
+usage: parser.py moodle courses [-h]
+
+optional arguments:
+    -h, --help  show this help message and exit
+\end{minted}
 This is the simplest module to use as we don't have to pass any argument. We are simply returned a list of the courses in which we have registered.\\
 Apart from courses registered, we also get important info like the course id which can be later used in the other moodle modules.
 This also provides us with information on our progress made so far in the course.
@@ -141,24 +193,40 @@ sl No    Course id    Progress  Short Name     Full Name
 3  219   88.8889  CS 699-2020-1  Software Lab.
 \end{minted}
 
-\subsection{announcements}
-To get information on how to use the announcements module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle announcements -h}\\
-\\
+\subsection{Announcements}
+To get information on how to use the announcements module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle announcements -h
+usage: parser.py moodle announcements [-h] -c CID [-n NUMBER]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CID, --cid CID     Show announcements of given course
+  -n NUMBER, --number NUMBER
+                        Show only top n announcements
+\end{minted}
 For using the announcements module we need to provide -c flag and provide the course id (course id is with respect to moodle and can be found from the moodle course module), it is mandatory to know which course's announcements you are trying to fetch. The -n flag is to provide the top number of entries we want to filter and see in the output\\
 To get a list of 'n' announcements for a course we can for example:
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle discussions -c 226 -n 1
+/home/user$: python3 parser.py moodle announcements -c 226 -n 1
 Announcements:
 	 1. 2020-11-16 15:34:42 last lecture uploaded
 Final lecture on Payment Channel Details has been uploaded (#26). 
 Please see these before the Live Session on Thursday.Vinay
 \end{minted}
 
-\subsection{assignments}
-To get information on how to use the assignments module, the user can do so with a -h flag like \\
-\textbf{/home/user\$: python3 parser.py moodle assignments -h}\\
-\\
+\subsection{Assignments}
+To get information on how to use the assignments module, the user can do so with a -h flag like 
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py moodle assignments -h
+usage: parser.py moodle assignments [-h] [-d] [-c COURSE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d, --due             Show only due assignments
+  -c COURSE, --course COURSE
+                        Filter for course name
+\end{minted}
 For using the assignments module, the user needs to -c flag and provide the name of the course(or the substring of it). The -d flag filters out the due assignments. If no -c flag is provided it will list out all the assignments.\\
 To get a list of the due assignments for a course we can for example:
 \begin{minted}[frame=lines, framesep=4mm]{text}
@@ -188,14 +256,29 @@ optional arguments:
   -h, --help            show this help message and exit    
 \end{minted}
 This provides four options to fetch data from the cse website.
-\subsection{courses}
+\subsection{Courses}
 The courses subcomponent can help us get the list of courses being offered for the year. It has filters for spring, autumn courses.
 We can also fetch other information regarding a course such as it's description, the pre-requisites required for a course and it's text references.
 To filter them out, we have the -f flag, we can filter them based on the course id, or course name or even the instructor name. This enables a user
 with many options, For example, if a user wants to list out all the courses offered by professor 'X', user can do so using the appropriate flags
 along with the -f flag.To get more info on the courses subcomponent, the user can do so using the -h flag\\
 \textbf{/home/user\$: python3 parser.py cse courses -h}\\
-\\
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user$: python3 parser.py cse courses -h
+usage: parser.py cse courses [-h] [-a] [-s] [-d] [-D] [-p] [-t] [-f FILTER]
+
+optional arguments:
+    -h, --help            show this help message and exit
+    -a, --autumn          Show courses from Autumn semester
+    -s, --spring          Show courses from Spring semester
+    -d, --details         Show courses with details
+    -D, --description     Show description of courses
+    -p, --prereqs         Show pre-requisites of courses
+    -t, --textrefs        Show text references of courses
+    -f FILTER, --filter FILTER
+                        Filter courses based on course name or course id or instructor
+                        name
+\end{minted}
 Some examples(Two examples):\\
 To fetch all courses offered by Prof Kavi Arya along with description and text refs we can simply do:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
@@ -252,7 +335,7 @@ Spring   CS 681         Performance Analysis of Computer Systems and Networks
 Spring   CS 684         Embedded Systems
 \end{minted}
 
-\subsection{students}
+\subsection{Students}
 This subcomponent helps us connect with other students of our batch. 
 User can find information on other students such as their interests, advisors.
 It has certain flags such as -b (to filter out the batchwise students), -i (to display their interests), -a (advisor)
@@ -261,9 +344,25 @@ If we do not provide any options, the command will fetch all the students names 
 Using a mix and match of these flags, a user can fetch all types of information
 that have been published in the cse website, this can help a user find information such as names of all students
 under an advisor, names of all students with a specific interest and so on.\\
-To get more info, the user can do using the -h flag:\\
-\textbf{/home/user\$: python3 parser.py cse students -h}\\
-\\
+To get more info, the user can do using the -h flag:
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user\$: python3 parser.py cse students -h
+usage: parser.py cse students [-h] -b BATCH [-i] [-a] [-f FILTER] [-A ADVISOR]
+                            [-I INTEREST]
+
+optional arguments:
+-h, --help            show this help message and exit
+-b BATCH, --batch BATCH
+                    Give batch name (eg. phd, mtech1, btech3)
+-i, --interest        Show student's interests
+-a, --advisor         Show student's advisor name
+-f FILTER, --filter FILTER
+                    filter students based on name
+-A ADVISOR, --Advisor ADVISOR
+                    filter students based on advisor name
+-I INTEREST, --Interest INTEREST
+                    filter students based on interest
+\end{minted}
 For example, to fetch the names of phd students who have an interest natural language processing
 we can do so by:\\
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
@@ -274,13 +373,26 @@ diptesh     Diptesh Kanojia  Prof. Pushpak Bhattacharyya
 kaverikale  Kaveri Kale                                   
 \end{minted}
 
-\subsection{faculties}
+\subsection{Faculties}
 We can get all sorts of information on a faculty such as their room details, their website(if any),
 a faculty's extension, interests. We can also filter faculties based on name
 and interests. By providing no flags, it will simply return a list of all the faculties.
-To find more info on how to use this, perform:\\
-\textbf{/home/user\$: python3 parser.py cse faculties -h}\\
-\\
+To find more info on how to use this, perform:
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user\$: python3 parser.py cse faculties -h
+usage: parser.py cse faculties [-h] [-i] [-w] [-e] [-r] [-F FILTER] [-I INTEREST]
+
+optional arguments:
+-h, --help            show this help message and exit
+-i, --interest        Show faculty's interests
+-w, --website         Show faculty's website
+-e, --extension       Show faculty's extension
+-r, --room            Show faculty's room details
+-F FILTER, --filter FILTER
+filter faculties based on name
+-I INTEREST, --Interest INTEREST
+filter faculties based on interest
+\end{minted}
 Example where a user wants to fetch room information of faculties that 
 have an interest in distributed systems. 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
@@ -293,12 +405,21 @@ siva       G. Sivakumar        Room no. 508, 5th floor, New CSE/CC Building
 \end{minted}
 
 
-\subsection{news}
+\subsection{News}
 This sub-component helps us find out the latest news posted on the cse website.
 We can filter the news based on the timeline, a year and also get more details using the -t, -y and -d flags respectively.
-For usage of this command, perform:\\
-\textbf{/home/user\$: python3 parser.py cse news -h}\\
-\\
+For usage of this command, perform:
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+/home/user\$: python3 parser.py cse news -h
+usage: parser.py cse news [-h] [-d] [-t TIMELINE TIMELINE | -y YEAR]
+
+optional arguments:
+-h, --help            show this help message and exit
+-d, --details         Show detailed news
+-t TIMELINE TIMELINE, --timeline TIMELINE TIMELINE
+Show news in a timeline (DDMMYYYY DDMMYYYY)
+-y YEAR, --year YEAR  Show news of a year   
+\end{minted}
 To fetch news updates, in a certain timeline we can:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
 /home/user$: python3 parser.py cse news -t 16102020 17112020
@@ -325,7 +446,7 @@ Example command to send an email with subject, body and attachment (Without cc a
 \textbf{/home/user\$: python3 parser.py mail send -to "test@iitb.ac.in" -sub "test" -b "Test body" -a -fp "/root/path-to-file"}\\
 Similarily, -cc and -bcc arguments can be provided to add cc and bcc recipients.
 
-\subsection{Receiving mail}
+\subsection{Searching mail}
 To search for an email, a user has multiple options, such as -n to get the top n latest emails, -k to search for an email based on a keyword, -f to search based on from address, -s to search based on subject, -t to search based on the timeline.
 For usage of search command in mail, perform:\\
 \textbf{/home/user\$: python3 parser.py mail search -h}\\
@@ -341,7 +462,7 @@ Example command to search top 2 latest emails with a specified subject (The stri
 \\
 The other commands can be used in a similar way by the user to fetch the required mails.
 
-\section{Whatsapp bot}
+\section{Whatsapp Bot}
 
 To use the Whatsapp bot, user will first need to register on the website.\\
 http://infomine.pythonanywhere.com/ \\

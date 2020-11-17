@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: python3 parser.py moodle grades \PYGZhy{}c 222
+sl No      Grade    Max  Percentage
+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}
+      1                 6  \PYGZhy{}
+      2    7            9  77.78 \PYGZpc{}
+      3    4.33333      6  72.22 \PYGZpc{}
+\end{Verbatim}

@@ -1,7 +1,7 @@
 ## CSE 
 
 #### Intro
-The cse component of  infomine consists of four classes. Each of these classes represent a subcomponent under the cse component. 
+The cse component of  info-mine consists of four classes. Each of these classes represent a subcomponent under the cse component. 
 
 #### Class names, with their functions
 * <b>courses</b>
