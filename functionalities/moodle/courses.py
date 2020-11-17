@@ -13,6 +13,9 @@ from security.moodle_credentials import moodle_credential
 
 class Courses:
     def show_courses(self):
+        '''
+        Show details of all enrolled courses
+        '''
         url = 'https://moodle.iitb.ac.in/webservice/rest/server.php?moodlewsrestformat=json'
         
         token, userid = utils.get_credential()

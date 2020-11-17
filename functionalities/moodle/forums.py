@@ -13,6 +13,12 @@ from security.moodle_credentials import moodle_credential
 
 class discussion_forums:
     def show_course_discussion_forums(self, course_id, n = None):
+        '''
+        Show all discussion forums of a particular course
+        Input:
+            course_id (int) : ID of the course
+            n (int) : show only top `n` discussion forums
+        '''
         token, userid = utils.get_credential()
         payload = {'wstoken': token,'wsfunction':'mod_forum_get_forums_by_courses','courseids[0]': course_id}
         res = requests.post('https://moodle.iitb.ac.in/webservice/rest/server.php?moodlewsrestformat=json',data=payload)

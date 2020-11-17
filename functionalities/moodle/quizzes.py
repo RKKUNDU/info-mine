@@ -13,6 +13,11 @@ from security.moodle_credentials import moodle_credential
 
 class Quizzes:
     def show_quizzes(self, course_id):
+        '''
+        Show quizzes of a course
+        Input:
+            course_id (int) : ID of the course
+        '''
         token, userid = utils.get_credential()
         payload = {'wstoken': token, 'wsfunction': 'mod_quiz_get_quizzes_by_courses', 'courseids[0]': course_id}
         
@@ -26,6 +31,9 @@ class Quizzes:
         print(tabulate(table, headers = ['sl No', 'id', 'Name', 'Total Score', 'Quiz Opens', 'Quiz Closes']))
 
     def show_all_quizzes(self):
+        '''
+        Show quizzes of all courses
+        '''
         token, userid = utils.get_credential()
         payload = {'wstoken': token, 'wsfunction': 'mod_quiz_get_quizzes_by_courses'}
         

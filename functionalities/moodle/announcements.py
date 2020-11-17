@@ -14,6 +14,12 @@ from security.moodle_credentials import moodle_credential
 
 class Announcements:
     def show_course_announcements(self, course_id, n = None):
+        '''
+        Show course announcements of a particular course
+        Input:
+            course_id (int)
+            n (int)
+        '''
         token, userid = utils.get_credential()
         payload = {'wstoken': token,'wsfunction':'mod_forum_get_forums_by_courses','courseids[0]': course_id}
 
@@ -25,8 +31,8 @@ class Announcements:
                 id = x['id']
                 break
                 
-        if x is None:
-            exit(0)
+        if id is None:
+            print("Course does not exist")
         else:
             payload = {'wstoken': token,'wsfunction':'mod_forum_get_forum_discussions', 'forumid': id}
         

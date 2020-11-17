@@ -13,6 +13,11 @@ from security.moodle_credentials import moodle_credential
 
 class Grades:
     def show_grades(self, course_id):
+        '''
+        Show grades of a course
+        Input:
+            course_id (int) : ID of the course
+        '''
         token, userid = utils.get_credential()
         payload = {'wstoken': token,'wsfunction': 'gradereport_user_get_grade_items', 'courseid': course_id, 'userid': userid}
         res = requests.post('https://moodle.iitb.ac.in/webservice/rest/server.php?moodlewsrestformat=json', data=payload)
