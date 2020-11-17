@@ -8,7 +8,7 @@ $(document).ready(function(){
         myObject.name = $("#name").val();
         myObject.mobile_no = $("#whatsappnumber").val();
         myObject.ldap_email = $("#ldapusername").val();
-        myObject.ldap_password = $("#ldappassword").val();
+        myObject.ldap_pass = $("#ldappassword").val();
         myObject.cse_email = $("#deptmailusername").val();
         myObject.cse_email_pass = $("#deptmailpassword").val();
         myObject.moodle_id = $("#moodleusername").val();
@@ -19,6 +19,7 @@ $(document).ready(function(){
             type: frm.attr('method'),
             url: frm.attr('action'),
             dataType : 'json',
+            contentType: "application/json",
             data: formData,
             success: function (data) {
                 alert('Submission was successful.');

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: python3 parser.py cse courses \PYGZhy{}f systems \PYGZhy{}s
+Semester  Course Code    Course Name
+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}
+Spring   CS 317         Database and Information Systems
+Spring   CS 347 M       Operating Systems
+Spring   CS 387         Database and Information Systems Lab
+Spring   CS 681         Performance Analysis of Computer Systems and Networks
+Spring   CS 684         Embedded Systems
+\end{Verbatim}

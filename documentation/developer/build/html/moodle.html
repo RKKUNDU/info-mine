@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Moodle &#8212; Info-Mine 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Email" href="email.html" />
+    <link rel="prev" title="Getting started" href="intro.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="email.html" title="Email"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Getting started"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="moodle">
+<h1>Moodle<a class="headerlink" href="#moodle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>Moodle consists of 7 subcomponents where the user will fetch information from.
+Source code for this can be found in the functionalities/moodle folder.</p>
+<p>Each of the 7 classes represent one subcomponent:</p>
+</div>
+<div class="section" id="class-names-with-their-functions">
+<h2>Class names, with their functions<a class="headerlink" href="#class-names-with-their-functions" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><b>courses</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_courses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show details of all enrolled courses</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>discussions</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_discussions_from_a_forum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forum_id</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show all discussions of a particular discussion forum</span>
+<span class="sd">    Input:</span>
+<span class="sd">        forum_id (int) : ID of the discussion forum</span>
+<span class="sd">        n (int) : show only top `n` discussions</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>quizzes</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_quizzes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_id</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show quizzes of a course</span>
+<span class="sd">    Input:</span>
+<span class="sd">        course_id (int) : ID of the course</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_all_quizzes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show quizzes of all courses</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>announcements</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_assignments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">show_only_due</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show assignments of a course</span>
+<span class="sd">    Input:</span>
+<span class="sd">        course (string) : filter for course name</span>
+<span class="sd">        show_only_due (boolean) : when set to True, shows only due assignments</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>forums</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_course_discussion_forums</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_id</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show all discussion forums of a particular course</span>
+<span class="sd">    Input:</span>
+<span class="sd">        course_id (int) : ID of the course</span>
+<span class="sd">        n (int) : show only top `n` discussion forums</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>grades</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_grades</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_id</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show grades of a course</span>
+<span class="sd">    Input:</span>
+<span class="sd">        course_id (int) : ID of the course</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>assignments</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_assignments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">show_only_due</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Show assignments of a course</span>
+<span class="sd">    Input:</span>
+<span class="sd">        course (string) : filter for course name</span>
+<span class="sd">        show_only_due (boolean) : when set to True, shows only due assignments</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="developing-the-moodle-component">
+<h2>Developing the moodle component<a class="headerlink" href="#developing-the-moodle-component" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The documentation to use the moodle apis can be found at:<ul>
+<li>“https://docs.moodle.org/dev/Creating_a_web_service_client”</li>
+</ul>
+</li>
+<li>Also, a developer can create a sandbox account for moodle, where list of all the APIs are available. (“https://sandbox.moodledemo.net/”)</li>
+<li>When a user logs in the first time, the user token is stored in an encrypted manner in the moodle file under the configs folder.</li>
+<li>This token is decrypted just before every call and a request is sent to the respective moodle resource from where information is fetched.</li>
+<li>Please go through the moodle component’s source code for more details on parsing and making API calls.</li>
+<li>A developer can add more functionalities for the moodle component by using the APIs, and can also add more flags to the existing classes.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Moodle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-names-with-their-functions">Class names, with their functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developing-the-moodle-component">Developing the moodle component</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cse.html">CSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsappbot.html">Whatsapp Bot</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">Getting started</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="email.html"
+                        title="next chapter">Email</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/moodle.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="email.html" title="Email"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Getting started"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Rohit Kundu, Pranshu Chourasia, Raghunath Das, Pramod S Rao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

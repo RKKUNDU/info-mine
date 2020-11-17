@@ -1,0 +1,300 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE &#8212; Info-Mine 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Whatsapp Bot" href="whatsappbot.html" />
+    <link rel="prev" title="Email" href="email.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="whatsappbot.html" title="Whatsapp Bot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="email.html" title="Email"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cse">
+<h1>CSE<a class="headerlink" href="#cse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>The cse component of  infomine consists of four classes. Each of these classes represent a subcomponent under the cse component.</p>
+</div>
+<div class="section" id="class-names-with-their-functions">
+<h2>Class names, with their functions<a class="headerlink" href="#class-names-with-their-functions" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><b>courses</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_courses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_autumn</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">in_spring</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the courses from CSE website and show them</span>
+<span class="sd">    Input:</span>
+<span class="sd">        in_autumn (boolean) : whether the course is offered in autumn semester</span>
+<span class="sd">        in_spring (boolean) : whether the course is offered in spring semester</span>
+<span class="sd">    Following things are shown for each course:</span>
+<span class="sd">    [&#39;Semester&#39;, &#39;Course Code&#39;, &#39;Course Name&#39;, &#39;Instructor Name&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_filtered_courses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">with_details</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_description</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_prereqs</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_textrefs</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">in_autumn</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">in_spring</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the courses from CSE website and show only the filtered courses</span>
+<span class="sd">    case-insensitive filtering is done based on course code (space does not matter), course name, instructor name</span>
+<span class="sd">    Input:</span>
+<span class="sd">        filter (string): filter the courses</span>
+<span class="sd">        with_details (boolean): print course(s) with additional information (discussed later)</span>
+<span class="sd">        with_description (boolean): also print the description of the course(s) with other information</span>
+<span class="sd">        with_prereqs (boolean):  also print the Pre-Requisites of the course(s) with other information</span>
+<span class="sd">        with_textrefs (boolean):  also print the text references of the course(s) with other information</span>
+<span class="sd">        in_autumn (boolean) : whether the course is offered in autumn semester</span>
+<span class="sd">        in_spring (boolean) : whether the course is offered in spring semester</span>
+
+<span class="sd">    with_details = True: Following things are shown for each courses</span>
+<span class="sd">        [&quot;Course Name&quot;, &quot;Course Code&quot;, &quot;Course Instructor&quot;, &quot;Semester&quot;, &quot;Total Credit&quot;, &quot;Course Type&quot;, &quot;Offered&quot;, &quot;Courese Duration&quot;, &quot;Homepage&quot;]</span>
+
+<span class="sd">    with_details = False:  Following things are shown for each courses</span>
+<span class="sd">        [&#39;Semester&#39;, &#39;Course Code&#39;, &#39;Course Name&#39;, &#39;Instructor Name&#39;]</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">        Print in the mentioned format or print &quot;No courses found with this filter. Please try with some other filter&quot; if there is no courses found</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>faculties</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_faculties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_website</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_extension</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_room</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the faculties from CSE website and show them</span>
+<span class="sd">    Input:</span>
+<span class="sd">        with_interests (boolean): whether to show &#39;interests&#39; of the faculties in addition to other information</span>
+<span class="sd">        with_website (boolean): whether to show website of the faculties in addition to other information</span>
+<span class="sd">        with_extension (boolean): whether to show extensions of the faculties in addition to other information</span>
+<span class="sd">        with_room (boolean): whether to show room detail of the faculties in addition to other information</span>
+
+<span class="sd">    Following things are shown for each faculty normally:</span>
+<span class="sd">        [&#39;User ID&#39;, &#39;Name&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_filtered_faculties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name_filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interests_filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  
+                            <span class="n">filters_name</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">filters_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+                            <span class="n">with_extension</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_room</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_website</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the faculties from CSE website and show filtered faculties</span>
+<span class="sd">    Input:</span>
+<span class="sd">        batch (string): batch name of the students to show (eg. MTech1, BTech1)</span>
+<span class="sd">        filters_name (boolean): whether filters based on name or userid</span>
+<span class="sd">        name_filter (string): filter for name </span>
+<span class="sd">        filters_interests (boolean): whether filters based on &#39;interests&#39;</span>
+<span class="sd">        interests_filter (string): filter for &#39;interests&#39; </span>
+<span class="sd">        with_interests (boolean): whether to show &#39;interests&#39; of the faculties in addition to other information</span>
+<span class="sd">        with_website (boolean): whether to show website of the faculties in addition to other information</span>
+<span class="sd">        with_extension (boolean): whether to show extensions of the faculties in addition to other information</span>
+<span class="sd">        with_room (boolean): whether to show room detail of the faculties in addition to other information</span>
+
+<span class="sd">    Following things are shown for each faculy normally:</span>
+<span class="sd">        [&#39;User ID&#39;, &#39;Name&#39;]</span>
+<span class="sd">    Output:</span>
+<span class="sd">        Print in the mentioned format or print &quot;No faculty found with this filter. Please try with some other filter&quot; if there is no faculty found</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>news</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_news_in_a_year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">with_details</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the news of a particular year from CSE website and show them</span>
+<span class="sd">    Input:</span>
+<span class="sd">        year (string): show news of this particular year</span>
+<span class="sd">        with_details (boolean): whether to show &#39;details&#39; of the news in addition to other information</span>
+
+<span class="sd">    Following things are shown for each news normally:</span>
+<span class="sd">        [&#39;Date&#39;, &#39;Snippet&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_news_in_time_period</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">with_details</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the news in a particular time frame from CSE website and show them</span>
+<span class="sd">    Input:</span>
+<span class="sd">        start_date (string): show news starting from this date</span>
+<span class="sd">        end_date (string): show news ending at this date</span>
+<span class="sd">        with_details (boolean): whether to show &#39;details&#39; of the news in addition to other information</span>
+
+<span class="sd">    Following things are shown for each news normally:</span>
+<span class="sd">        [&#39;Date&#39;, &#39;Snippet&#39;]</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">        Print in the mentioned format or print &quot;No news found in this time frame&quot; if there is no news found</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><b>students</b></p>
+<ul>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_students</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">with_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_advisor</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the students in a particular batch from CSE website and show them</span>
+<span class="sd">    Input:</span>
+<span class="sd">        batch (string): batch name of the students to show (eg. MTech1, BTech1)</span>
+<span class="sd">        with_interests (boolean): whether to show &#39;interests&#39; of the students in addition to other information</span>
+<span class="sd">        with_advisor (boolean): whether to show &#39;advisor&#39; of the students in addition to other information</span>
+
+<span class="sd">    Following things are shown for each student normally:</span>
+<span class="sd">        [&#39;User ID&#39;, &#39;Name&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_filtered_students</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> 
+                            <span class="n">name_filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interests_filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">advisor_filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                            <span class="n">filters_name</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">filters_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+                            <span class="n">filters_advisor</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_advisor</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">with_interests</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function will fetch all the students in a particular batch from CSE website and show filtered students</span>
+<span class="sd">    Input:</span>
+<span class="sd">        batch (string): batch name of the students to show (eg. MTech1, BTech1)</span>
+<span class="sd">        filters_name (boolean): whether filters based on name or userid</span>
+<span class="sd">        name_filter (string): filter for name </span>
+<span class="sd">        filters_interests (boolean): whether filters based on &#39;interests&#39;</span>
+<span class="sd">        interests_filter (string): filter for &#39;interests&#39; </span>
+<span class="sd">        filters_advisor (boolean): whether filters based on advisor</span>
+<span class="sd">        advisor_filter (string): filter for &#39;advisor name&#39; </span>
+<span class="sd">        with_interests (boolean): whether to show &#39;interests&#39; of the students in addition to other information</span>
+<span class="sd">        with_advisor (boolean): whether to show &#39;advisor&#39; of the students in addition to other information</span>
+
+<span class="sd">    Following things are shown for each student normally:</span>
+<span class="sd">        [&#39;User ID&#39;, &#39;Name&#39;]</span>
+<span class="sd">    Output:</span>
+<span class="sd">        Print in the mentioned format or print &quot;No student found with this filter. Please try with some other filter&quot; if there is no student found</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="developing-the-cse-component">
+<h2>Developing the cse component<a class="headerlink" href="#developing-the-cse-component" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>To scrape information from the cse website, we call the API made available by the cse department:<ul>
+<li>https://www.cse.iitb.ac.in/~internal-live/api/</li>
+</ul>
+</li>
+<li>Using these APIs a developer can always add more functionalities to the existing classes, and also implement new features of their own.</li>
+<li>For example, subcomponents such as exam timetable, publications etc. can be further added to this component.</li>
+<li>Please go through the classes in the source code to further understand the details.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moodle.html">Moodle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">Email</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CSE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-names-with-their-functions">Class names, with their functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developing-the-cse-component">Developing the cse component</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whatsappbot.html">Whatsapp Bot</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="email.html"
+                        title="previous chapter">Email</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="whatsappbot.html"
+                        title="next chapter">Whatsapp Bot</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cse.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="whatsappbot.html" title="Whatsapp Bot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="email.html" title="Email"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Info-Mine 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Rohit Kundu, Pranshu Chourasia, Raghunath Das, Pramod S Rao.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
