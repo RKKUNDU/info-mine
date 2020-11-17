@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.base import MIMEBase
 from email import encoders
-from dept_credentials import dept_credentials
+from security.dept_credentials import dept_credentials
 try:
     Cred=dept_credentials()
     username = str(Cred.get_stored_username())
