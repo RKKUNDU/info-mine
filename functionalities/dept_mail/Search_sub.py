@@ -4,7 +4,7 @@ from email.header import decode_header
 import webbrowser
 import os
 import sys
-from dept_credentials import dept_credentials
+from security.dept_credentials import dept_credentials
 
 class search_sub:
     def subject(self,sub):
