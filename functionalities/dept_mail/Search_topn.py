@@ -5,7 +5,7 @@ import webbrowser
 import os
 import sys
 import pprint
-from dept_credentials import dept_credentials
+from security.dept_credentials import dept_credentials
 
 class search_topn:
     def top(self,N):
