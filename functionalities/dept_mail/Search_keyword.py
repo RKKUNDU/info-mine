@@ -6,7 +6,7 @@ import os
 import sys
 from security.dept_credentials import dept_credentials
 class search_keyword:
-    def keyword(self,key):
+    def keyword(self,key,limit=5):
         try:
 
             s= str(key)
@@ -39,6 +39,7 @@ class search_keyword:
                                 subject = subject.decode()
                             # email sender
                             from_ = msg.get("From")
+                            dt=msg.get("Date")
                             sub=subject.lower()
 
                             # if the email message is multipart
@@ -56,7 +57,7 @@ class search_keyword:
                                     if content_type == "text/plain" and "attachment" not in content_disposition:
                                         body=str(body).lower()
                                         if body.__contains__(s):
-                                            if j >=5:
+                                            if j >=limit:
                                                 raise StopIteration
                                             j=j+1
                                             print("="*200)
@@ -67,7 +68,11 @@ class search_keyword:
                                             print('\n')
                                         # print text/plain emails and skip attachments
                                             print("Subject:", subject)
+                                            print('\n')
+                                            print("Date:", dt)
+                                            print('\n')
                                             print("From:", from_)
+                                            print('\n')
                                             print(body)
                                         
                                     elif "attachment" in content_disposition:
