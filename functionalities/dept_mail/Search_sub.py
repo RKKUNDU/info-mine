@@ -3,29 +3,18 @@ import email
 from email.header import decode_header
 import webbrowser
 import os
-import datetime
 import sys
-from security.insti_credentials import insti_credentials
+from security.dept_credentials import dept_credentials
 
-class search_date:
-    def date_(self,date1,date2):
+class search_sub:
+    def subject(self,sub):
         try:
-            s1 = str(date1)
-            s2 = str(date2)
-            # print(s1)
-            # print(s2)
-
-            t1=datetime.datetime(int(s1[4:]),int(s1[2:4]),int(s1[0:2]))
-            t2=datetime.datetime(int(s2[4:]),int(s2[2:4]),int(s2[0:2]))
-            # print(t1)
-            # print(t2)
-
-            Cred=insti_credentials()
+            s= str(sub)
+            Cred=dept_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
-            imap_url = 'imap.iitb.ac.in'
+            imap_url = 'imap.cse.iitb.ac.in'
             incoming_port = int(993)
-
 
             connection = imaplib.IMAP4_SSL(imap_url,incoming_port)
             # authenticate
@@ -34,7 +23,6 @@ class search_date:
             status, messages = connection.select("INBOX")
             # total number of emails
             messages = int(messages[0])
-
             j=0
             try:
                 for i in range(messages, 0, -1):
@@ -52,14 +40,9 @@ class search_date:
                                 subject = subject.decode()
                             # email sender
                             from_ = msg.get("From")
-                            date_ = str(msg.get("Date"))[0:16]
-                            if date_[7]!=' ':
-                                date_=date_[0:5]+'0'+date_[5:15]
-                            date_dt1 = datetime.datetime.strptime(date_, '%a, %d %b %Y')
-                            if date_dt1 < t1:
-                                raise StopIteration
-                        
-                            if date_dt1 >= t1 and date_dt1 <=t2 :
+                            sub=subject.lower() 
+                            #print(sub)
+                            if sub.__contains__(s):
                                 if j >=5:
                                     raise StopIteration
                                 
@@ -70,6 +53,7 @@ class search_date:
                                 print(st)
                                 print("="*200)
                                 print('\n')
+                                
                                 print("Subject:", subject)
                                 print("From:", from_)
                                 # if the email message is multipart
@@ -114,19 +98,16 @@ class search_date:
                                     filepath = os.path.join(subject, filename)
                                     # write the file
                                     open(filepath, "w").write(body)
+                                    print(filepath)
                                     # open in the default browser
                                     #webbrowser.open(filepath)
-                                    #print(filepath)
-                            
+                
                             else:
                                 pass
-
-            except StopIteration :
-                pass
-
+            except StopIteration: pass
             connection.close()
             connection.logout()
         except:
             print("Invalid username / password ")
-            os.remove("configs/insti_mail")
-            os.remove("configs/insti_mail.key")
+            os.remove("configs/dept_mail")
+            os.remove("configs/dept_mail.key")

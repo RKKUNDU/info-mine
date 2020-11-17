@@ -5,7 +5,7 @@ import webbrowser
 import os
 import datetime
 import sys
-from security.insti_credentials import insti_credentials
+from security.dept_credentials import dept_credentials
 
 class search_date:
     def date_(self,date1,date2):
@@ -20,10 +20,10 @@ class search_date:
             # print(t1)
             # print(t2)
 
-            Cred=insti_credentials()
+            Cred=dept_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
-            imap_url = 'imap.iitb.ac.in'
+            imap_url = 'imap.cse.iitb.ac.in'
             incoming_port = int(993)
 
 
@@ -128,5 +128,5 @@ class search_date:
             connection.logout()
         except:
             print("Invalid username / password ")
-            os.remove("configs/insti_mail")
-            os.remove("configs/insti_mail.key")
+            os.remove("configs/dept_mail")
+            os.remove("configs/dept_mail.key")

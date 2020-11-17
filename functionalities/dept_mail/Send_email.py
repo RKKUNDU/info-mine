@@ -8,9 +8,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.base import MIMEBase
 from email import encoders
-from security.insti_credentials import insti_credentials
+from security.dept_credentials import dept_credentials
 try:
-    Cred=insti_credentials()
+    Cred=dept_credentials()
     username = str(Cred.get_stored_username())
     password=str(Cred.get_stored_password())
 
@@ -67,7 +67,7 @@ try:
     server.quit()
 except:
     print("Sending failed !! Check username / password ")
-    os.remove("configs/insti_mail")
-    os.remove("configs/insti_mail.key")
+    os.remove("configs/dept_mail")
+    os.remove("configs/dept_mail.key")
 
 
