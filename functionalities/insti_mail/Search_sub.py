@@ -7,7 +7,7 @@ import sys
 from security.insti_credentials import insti_credentials
 
 class search_sub:
-    def subject(self,sub):
+    def subject(self,sub,limit=5):
         try:
             s= str(sub)
             Cred=insti_credentials()
@@ -40,10 +40,11 @@ class search_sub:
                                 subject = subject.decode()
                             # email sender
                             from_ = msg.get("From")
+                            dt=msg.get("Date")
                             sub=subject.lower() 
                             #print(sub)
                             if sub.__contains__(s):
-                                if j >=5:
+                                if j >=limit:
                                     raise StopIteration
                                 
                                 j=j+1
@@ -53,9 +54,12 @@ class search_sub:
                                 print(st)
                                 print("="*200)
                                 print('\n')
-                                
                                 print("Subject:", subject)
+                                print('\n')
+                                print("Date:", dt)
+                                print('\n')
                                 print("From:", from_)
+                                print('\n')
                                 # if the email message is multipart
                                 if msg.is_multipart():
                                     # iterate over email parts

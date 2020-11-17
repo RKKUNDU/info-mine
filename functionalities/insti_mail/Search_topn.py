@@ -8,9 +8,8 @@ import pprint
 from security.insti_credentials import insti_credentials
 
 class search_topn:
-    def top(self,N):
+    def top(self,N=5):
         try:
-    
             Cred=insti_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
@@ -46,8 +45,13 @@ class search_topn:
                             subject = subject.decode()
                         # email sender
                         from_ = str(msg.get("From"))
-                        print("Subject : ", subject)
-                        print("From : ", from_)
+                        dt=msg.get("Date")
+                        print('\n')
+                        print("Subject:", subject)
+                        print('\n')
+                        print("Date:", dt)
+                        print('\n')
+                        print("From:", from_)
                         print('\n')
                         # if the email message is multipart
                         if msg.is_multipart():
