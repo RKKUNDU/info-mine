@@ -1,4 +1,4 @@
-from keys import Key
+from security.keys import Key
 import os.path
 from os import path
 import getpass
@@ -21,7 +21,7 @@ class insti_credentials:
             self.password=passwd
         else:
             self.key.write_key_to_file(PATH + 'insti_mail.key')
-            uname=str(input("Enter user name : "))
+            uname=str(input("Enter IITB user name : "))
             pwd = getpass.getpass() 
             txt= uname+','+pwd
             self.key.encrypt_and_write_to_file(txt,PATH + 'insti_mail')
