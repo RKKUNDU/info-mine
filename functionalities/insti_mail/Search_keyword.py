@@ -9,55 +9,73 @@ from security.insti_credentials import insti_credentials
 class search_keyword:
     def keyword(self,key,limit=5):
         try:
-
+            #Get key string to filter subject
             s= str(key)
+
+            #Generate username and password
             Cred=insti_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
+
+            #Imap url and port
             imap_url = 'imap.iitb.ac.in'
             incoming_port = int(993)
+
+            #Establish connection
             connection = imaplib.IMAP4_SSL(imap_url,incoming_port)
-            # authenticate
+
+            # Authentication using username and password
             connection.login(username, password)
-            # number of top emails to fetch
+
+            # Select Inbox for the connection
             status, messages = connection.select("INBOX")
-            # total number of emails
+
+            # Total number of emails
             messages = int(messages[0])
+
             j=0
             try:
                 for i in range(messages, 0, -1):
                     
-                    # fetch the email message by ID
+                    # Fetch emails by ID
                     res, msg = connection.fetch(str(i), "(RFC822)")
                     for response in msg:
                         if isinstance(response, tuple):
-                            # parse a bytes email into a message object
+
+                            # Parse a bytes email into a message object
                             msg = email.message_from_bytes(response[1])
-                            # decode the email subject
+
+                            # Decode the email subject
                             subject = decode_header(msg["Subject"])[0][0]
+
                             if isinstance(subject, bytes):
-                                # if it's a bytes, decode to str
+                                # If subject is byte decode it to string
                                 subject = subject.decode()
-                            # email sender
+
+                            # Fetch information of Emails
                             from_ = msg.get("From")
                             dt=msg.get("Date")
                             sub=subject.lower()
 
-                            # if the email message is multipart
+                            # If Email has multiple part
                             if msg.is_multipart():
-                                # iterate over email parts
+                                # Span over each part
+
                                 for part in msg.walk():
-                                    # extract content type of email
+                                   # Fetch content type
                                     content_type = part.get_content_type()
                                     content_disposition = str(part.get("Content-Disposition"))
                                     try:
-                                        # get the email body
+                                        # Fetch body of Email
                                         body = part.get_payload(decode=True).decode()
                                     except:
                                         pass
                                     if content_type == "text/plain" and "attachment" not in content_disposition:
                                         body=str(body).lower()
+
+                                        #Body matching with given string
                                         if body.__contains__(s):
+                                            #Checking for limit of mails 
                                             if j >=limit:
                                                 raise StopIteration
                                             j=j+1
@@ -67,34 +85,38 @@ class search_keyword:
                                             print(st)
                                             print("="*200)
                                             print('\n')
-                                        # print text/plain emails and skip attachments
                                             print("Subject:", subject)
                                             print('\n')
                                             print("Date:", dt)
                                             print('\n')
                                             print("From:", from_)
                                             print('\n')
+                                            # Print text/plain emails and skip attachments
                                             print(body)
                                         
-                                    elif "attachment" in content_disposition:
-                                    # download attachment
-                                        filename = part.get_filename()
-                                        if filename:
-                                            if not os.path.isdir(subject):
-                                                # make a folder for this email (named after the subject)
-                                                os.mkdir(subject)
-                                            filepath = os.path.join(subject, filename)
-                                            # download attachment and save it
-                                            open(filepath, "wb").write(part.get_payload(decode=True))
+                                        elif "attachment" in content_disposition:
+                                            # Download attachments and save in local file
+                                            filename = part.get_filename()
+                                            if filename:
+                                                if not os.path.isdir(subject):
+                                                    # Make folder with name as subject
+                                                    os.mkdir(subject)
+                                                filepath = os.path.join(subject, filename)
+                                                # Download attachment and save it
+                                                open(filepath, "wb").write(part.get_payload(decode=True))
                             else:
-                                # extract content type of email
+                                # Fetch content type
                                 content_type = msg.get_content_type()
-                                # get the email body
+
+                                # Fetch body of Email
                                 body = msg.get_payload(decode=True).decode()
                                 if content_type == "text/plain":
                                     body=str(body)
+                                    #Body matching with given string
                                     if body.__contains__(s):
-                                        if j >=5:
+
+                                        #Checking for limit of mails 
+                                        if j >=limit:
                                             raise StopIteration
                                         j=j+1
                                         print("="*200)
@@ -103,14 +125,17 @@ class search_keyword:
                                         print(st)
                                         print("="*200)
                                         print('\n')
-                                        # print only text email parts
+                                        # Print only text email parts
                                         print("Subject:", subject)
                                         print("From:", from_)
                                         print(body)
                                     
                         else:
                                 pass
-            except StopIteration: pass
+            # Stop when limit reached
+            except StopIteration: 
+                pass
+            #Close connection and logout 
             connection.close()
             connection.logout()
         except:

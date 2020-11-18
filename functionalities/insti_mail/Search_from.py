@@ -9,41 +9,52 @@ from security.insti_credentials import insti_credentials
 class search_from:
     def from_(self,sender,limit=5):
         try:
-            s = str(sender)
+            #Get s string to filter ssender
+            s= str(sender)
+
+            #Generate username and password
             Cred=insti_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
+
+            #Imap url and port
             imap_url = 'imap.iitb.ac.in'
             incoming_port = int(993)
+
+            #Establish connection
             connection = imaplib.IMAP4_SSL(imap_url,incoming_port)
-            # authenticate
+
+            # Authentication using username and password
             connection.login(username, password)
-            # number of top emails to fetch
+
+            # Select Inbox for the connection
             status, messages = connection.select("INBOX")
-            # total number of emails
+
+            # Total number of emails
             messages = int(messages[0])
             j=0
             try:
                 for i in range(messages, 0, -1):
                     
-                    # fetch the email message by ID
+                    # Fetch emails by ID
                     res, msg = connection.fetch(str(i), "(RFC822)")
                     for response in msg:
                         if isinstance(response, tuple):
-                            # parse a bytes email into a message object
+                            # Parse a bytes email into a message object
                             msg = email.message_from_bytes(response[1])
-                            # decode the email subject
+                            # Decode the email subject
                             subject = decode_header(msg["Subject"])[0][0]
+
                             if isinstance(subject, bytes):
-                                # if it's a bytes, decode to str
+                                # If subject is byte decode it to string
                                 subject = subject.decode()
-                            # email sender
+
+                            # Fetch information of Emails
                             from_ = str(msg.get("From"))
                             dt=msg.get("Date")
-                            
-                            #print(sub)
+                            #From sender matching with given string
                             if from_.__contains__(s):
-                                
+                                #Checking for limit of mails 
                                 if j >=limit:
                                     raise StopIteration
                                 j=j+1
@@ -59,54 +70,60 @@ class search_from:
                                 print('\n')
                                 print("From:", from_)
                                 print('\n')
-                                # if the email message is multipart
+
+                                # If Email has multiple part
                                 if msg.is_multipart():
-                                    # iterate over email parts
+                                    # Span over each part
+
                                     for part in msg.walk():
-                                        # extract content type of email
+                                    # Fetch content type
                                         content_type = part.get_content_type()
                                         content_disposition = str(part.get("Content-Disposition"))
                                         try:
-                                            # get the email body
+                                            # Fetch body of Email
                                             body = part.get_payload(decode=True).decode()
                                         except:
                                             pass
                                         if content_type == "text/plain" and "attachment" not in content_disposition:
-                                            # print text/plain emails and skip attachments
+
+                                            # Print text/plain emails and skip attachments
                                             print(body)
                                         elif "attachment" in content_disposition:
-                                            # download attachment
+                                            # Download attachments and save in local file
                                             filename = part.get_filename()
                                             if filename:
                                                 if not os.path.isdir(subject):
-                                                    # make a folder for this email (named after the subject)
+                                                    # Make folder with name as subject
                                                     os.mkdir(subject)
                                                 filepath = os.path.join(subject, filename)
-                                                # download attachment and save it
+                                                # Download attachment and save it
                                                 open(filepath, "wb").write(part.get_payload(decode=True))
                                 else:
-                                    # extract content type of email
+                                    # Fetch content type
                                     content_type = msg.get_content_type()
-                                    # get the email body
+
+                                    # Fetch body of Email
                                     body = msg.get_payload(decode=True).decode()
                                     if content_type == "text/plain":
-                                        # print only text email parts
+                                        # Print only text email parts
                                         print(body)
-                                if content_type == "text/html":
-                                    # if it's HTML, create a new HTML file and open it in browser
-                                    if not os.path.isdir(subject):
-                                        # make a folder for this email (named after the subject)
-                                        os.mkdir(subject)
-                                    filename = f"{subject[:50]}.html"
-                                    filepath = os.path.join(subject, filename)
-                                    # write the file
-                                    open(filepath, "w").write(body)
-                                    # open in the default browser
-                                    #webbrowser.open(filepath)
+                                    if content_type == "text/html":
+                                        # If mail is HTML type create a new HTML file 
+                                        if not os.path.isdir(subject):
+                                            # Make a folder for this email with name as subject
+                                            os.mkdir(subject)
+                                        filename = f"{subject[:50]}.html"
+                                        filepath = os.path.join(subject, filename)
+                                        # Write the file
+                                        open(filepath, "w").write(body)
                             
                             else:
                                 pass
-            except StopIteration:pass
+
+            except StopIteration:
+                pass
+
+            #Close connection and logout 
             connection.close()
             connection.logout()
         except:
