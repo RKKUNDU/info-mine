@@ -59,6 +59,7 @@ class send_mail:
                 #Split for multiple attachments
                 path=filepath.split(',')
                 for pt in path:
+                    print(pt)
                     type_file = pt.split('.')[-1]
                     #Txt type attachment
                     if type_file == 'txt':
@@ -96,5 +97,7 @@ class send_mail:
             print("Sending failed !! Check username / password / filepath")
             os.remove("configs/dept_mail")
             os.remove("configs/dept_mail.key")
+            os.remove("configs/insti_mail")
+            os.remove("configs/insti_mail.key")
 
 
