@@ -10,7 +10,7 @@ class search_from:
     def from_(self,sender,limit=5):
         try:
             #Get s string to filter ssender
-            s= str(sub)
+            s= str(sender)
 
             #Generate username and password
             Cred=dept_credentials()
