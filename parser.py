@@ -205,7 +205,7 @@ if args.portal == 'cse':
                                 in_autumn = args.autumn, in_spring = args.spring)
         # when semester not given, show courses of both semester
         else:
-            c.show_filtered_courses(args.filter, with_detailsmoodle = args.details, with_description = args.description,
+            c.show_filtered_courses(args.filter, with_details = args.details, with_description = args.description,
                                 with_prereqs = args.prereqs, with_textrefs = args.textrefs)
 
     elif args.cse_command == 'students':
