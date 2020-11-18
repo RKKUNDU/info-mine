@@ -24,10 +24,11 @@ The term Info-Mine comes from mining for information from cse websites, moodle a
 How to use:
 
 1) Go to the directory where you want to install the source code
-2) Run the infomine-installer.sh file available in the repository
-3) User can then run the command from anywhere in their system
-4) Read the user documentation in the documentation folder for further details on usage of the command line tool.
-5) Inorder to register yourself for the whatsapp bot service, please visit: http://infomine.pythonanywhere.com/
-6) Fill all the details in the fields
-7) Once you have filled the details, proceed to follow the instructions that will be provided.
+2) Download the installer from "https://github.com/RKKUNDU/info-mine/blob/main/infomine-installer.sh"
+3) Run the command with root priviliges "sudo bash infomine-installer.sh", the file is ALSO available in the repository
+4) User can then run the command from anywhere in their system
+5) Read the user documentation in the documentation folder for further details on usage of the command line tool.
+6) Inorder to register yourself for the whatsapp bot service, please visit: http://infomine.pythonanywhere.com/
+7) Fill all the details in the fields
+8) Once you have filled the details, proceed to follow the instructions that will be provided.
  
