@@ -21,7 +21,7 @@ pip3 install beautifulsoup4==4.9.3
 # create infomine executable
 echo "#!/bin/bash
 cd $(pwd)/info-mine-main/
-python3 parser.py \${@}" > infomine
+python3 infomine \${@}" > infomine
 
 # add permission
 chmod +x infomine
