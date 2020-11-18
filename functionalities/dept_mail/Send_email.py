@@ -59,7 +59,7 @@ class send_mail:
                 #Split for multiple attachments
                 path=filepath.split(',')
                 for pt in path:
-                    print(pt)
+                    
                     type_file = pt.split('.')[-1]
                     #Txt type attachment
                     if type_file == 'txt':
