@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.9)  18 NOV 2020 02:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.9)  18 NOV 2020 11:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -321,10 +321,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 D.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/D457337703C05A68E5C958564C53C9D7EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
-
 
 (./_minted-main/D457337703C05A68E5C958564C53C9D7EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex [4
@@ -337,10 +333,6 @@ D.pygtex [4
 4.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/8E4BE56CA45A3578757B1433114CF8E7EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
-
 
 (./_minted-main/8E4BE56CA45A3578757B1433114CF8E7EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex) [5]
@@ -350,10 +342,6 @@ D.pygtex) [5]
 (./_minted-main/98F281CB8A8F086445C3A7DD3311206EAA15CF4BA75075E8168D3671BF7EB06
 4.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/C04B944EB5BE23618F1A2E50EE275EB9EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
 
 
 (./_minted-main/C04B944EB5BE23618F1A2E50EE275EB9EA8C2CB621C77F1A35EDA6E761A8835
@@ -383,12 +371,12 @@ D.pygtex)
 
 (./_minted-main/1A36514D6845BEABA2CA43348689F3A4AA15CF4BA75075E8168D3671BF7EB06
 4.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 181--1
+Underfull \hbox (badness 10000) in paragraph at lines 182--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--1
+Underfull \hbox (badness 10000) in paragraph at lines 182--1
 
  []
 
@@ -420,14 +408,10 @@ D.pygtex [9])
 D.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/A6DDB60771180045F9ABFA71846EE4C1EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
-
 
 (./_minted-main/A6DDB60771180045F9ABFA71846EE4C1EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 260--1
+Underfull \hbox (badness 10000) in paragraph at lines 261--1
 
  []
 
@@ -446,10 +430,6 @@ D.pygtex [12])
 D.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/10776E06AE0088A1C0CD2443785493A0EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
-
 
 (./_minted-main/10776E06AE0088A1C0CD2443785493A0EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex [13])
@@ -458,16 +438,12 @@ D.pygtex [13])
 
 (./_minted-main/9A6ABC8F9E4C260E378B7891A6D5AE52EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 366--1
+Underfull \hbox (badness 10000) in paragraph at lines 367--1
 
  []
 
 [14])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/EF711D4714A7233001D86C27438BE649EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
 
 
 (./_minted-main/EF711D4714A7233001D86C27438BE649EA8C2CB621C77F1A35EDA6E761A8835
@@ -479,10 +455,6 @@ D.pygtex)
 D.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P enc
-oding=utf8 -o _minted-main/2828518FC394F0E35BA2ECCE47B081D8EA8C2CB621C77F1A35ED
-A6E761A8835D.pygtex main.pyg)...executed.
-
 
 (./_minted-main/2828518FC394F0E35BA2ECCE47B081D8EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex [15])
@@ -491,76 +463,66 @@ D.pygtex [15])
 
 (./_minted-main/630D9F12F7A60AA8B4A6B873D97D7CEFEA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex) [16]
-Underfull \hbox (badness 10000) in paragraph at lines 434--441
+Underfull \hbox (badness 10000) in paragraph at lines 435--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--448
+Underfull \hbox (badness 10000) in paragraph at lines 443--449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--464
+Underfull \hbox (badness 10000) in paragraph at lines 451--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--464
+Underfull \hbox (badness 10000) in paragraph at lines 451--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--464
+Underfull \hbox (badness 10000) in paragraph at lines 451--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--464
+Underfull \hbox (badness 10000) in paragraph at lines 451--465
 
  []
 
 [17
 
 ] [18]
-<Latex_Image.png, id=64, 976.64874pt x 846.16125pt>
-File: Latex_Image.png Graphic file (type png)
-<use Latex_Image.png>
-Package pdftex.def Info: Latex_Image.png  used on input line 476.
-(pdftex.def)             Requested size: 398.34224pt x 284.52774pt.
+<whatsappbot.png, id=64, 979.66pt x 916.42375pt>
+File: whatsappbot.png Graphic file (type png)
+<use whatsappbot.png>
+Package pdftex.def Info: whatsappbot.png  used on input line 477.
+(pdftex.def)             Requested size: 398.32971pt x 284.52191pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--477
+Underfull \hbox (badness 10000) in paragraph at lines 468--478
 
  []
 
 
-Overfull \hbox (8.34224pt too wide) in paragraph at lines 467--477
+Overfull \hbox (8.32971pt too wide) in paragraph at lines 468--478
 [] 
  []
 
 [19
 
- <./Latex_Image.png>]
-runsystem(rm _minted-main/369522BC85A229795BD2D7302B1A8610EA8C2CB621C77F1A35EDA
-6E761A8835D.pygtex)...executed.
-
-runsystem(rm _minted-main/5AFEB06121DFB8DC9BC4996D46FD6040EA8C2CB621C77F1A35EDA
-6E761A8835D.pygtex)...executed.
-
-runsystem(rm _minted-main/928251BC602B2968FD5EAB44ADD29AB7EA8C2CB621C77F1A35EDA
-6E761A8835D.pygtex)...executed.
-
- [20
+ <./whatsappbot.png>] [20
 
 ] (./main.aux)
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5777 strings out of 483183
- 108925 string characters out of 5966293
- 385989 words of memory out of 5000000
- 20634 multiletter control sequences out of 15000+600000
+ 5771 strings out of 483183
+ 108481 string characters out of 5966293
+ 386281 words of memory out of 5000000
+ 20631 multiletter control sequences out of 15000+600000
  538323 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,6n,37p,840b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -569,10 +531,10 @@ Here is how much of TeX's memory you used:
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (20 pages, 414870 bytes).
+Output written on main.pdf (20 pages, 267490 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
