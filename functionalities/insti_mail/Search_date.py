@@ -10,47 +10,52 @@ from security.insti_credentials import insti_credentials
 class search_date:
     def date_(self,date1,date2,limit=5):
         try:
+            #Get strings of dates 
             s1 = str(date1)
             s2 = str(date2)
-            # print(s1)
-            # print(s2)
-
             t1=datetime.datetime(int(s1[4:]),int(s1[2:4]),int(s1[0:2]))
             t2=datetime.datetime(int(s2[4:]),int(s2[2:4]),int(s2[0:2]))
-            # print(t1)
-            # print(t2)
 
+            #Generate username and password
             Cred=insti_credentials()
             username = str(Cred.get_stored_username())
             password=str(Cred.get_stored_password())
+
+            #Imap url and port
             imap_url = 'imap.iitb.ac.in'
             incoming_port = int(993)
 
-
+            #Establish connection
             connection = imaplib.IMAP4_SSL(imap_url,incoming_port)
-            # authenticate
-            connection.login(username, password)
-            # number of top emails to fetch
-            status, messages = connection.select("INBOX")
-            # total number of emails
-            messages = int(messages[0])
 
+            # Authentication using username and password
+            connection.login(username, password)
+
+            # Select Inbox for the connection
+            status, messages = connection.select("INBOX")
+
+            # Total number of emails
+            messages = int(messages[0])
             j=0
             try:
                 for i in range(messages, 0, -1):
                     
-                    # fetch the email message by ID
+                    # Fetch emails by ID
                     res, msg = connection.fetch(str(i), "(RFC822)")
                     for response in msg:
+
                         if isinstance(response, tuple):
-                            # parse a bytes email into a message object
+
+                            # Parse a bytes email into a message object
                             msg = email.message_from_bytes(response[1])
-                            # decode the email subject
+                            # Decode the email subject
                             subject = decode_header(msg["Subject"])[0][0]
+
                             if isinstance(subject, bytes):
-                                # if it's a bytes, decode to str
+                                # If subject is byte decode it to string
                                 subject = subject.decode()
-                            # email sender
+
+                            # Fetch information of Emails
                             from_ = msg.get("From")
                             dt=msg.get("Date")
                             
@@ -58,10 +63,14 @@ class search_date:
                             if date_[7]!=' ':
                                 date_=date_[0:5]+'0'+date_[5:15]
                             date_dt1 = datetime.datetime.strptime(date_, '%a, %d %b %Y')
+
+                            #If you reach date less than first date stop
                             if date_dt1 < t1:
                                 raise StopIteration
-                        
+
+                            #Check range of dates between t1 and t2
                             if date_dt1 >= t1 and date_dt1 <=t2 :
+                                #Checking for limit of mails 
                                 if j >=limit:
                                     raise StopIteration
                                 
@@ -79,57 +88,58 @@ class search_date:
                                 print("From:", from_)
                                 print('\n')
                                 # if the email message is multipart
+                                # If Email has multiple part
                                 if msg.is_multipart():
-                                    # iterate over email parts
+                                    # Span over each part
+
                                     for part in msg.walk():
-                                        # extract content type of email
+                                    # Fetch content type
                                         content_type = part.get_content_type()
                                         content_disposition = str(part.get("Content-Disposition"))
                                         try:
-                                            # get the email body
+                                            # Fetch body of Email
                                             body = part.get_payload(decode=True).decode()
                                         except:
                                             pass
                                         if content_type == "text/plain" and "attachment" not in content_disposition:
-                                            # print text/plain emails and skip attachments
+
+                                            # Print text/plain emails and skip attachments
                                             print(body)
                                         elif "attachment" in content_disposition:
-                                            # download attachment
+                                            # Download attachments and save in local file
                                             filename = part.get_filename()
                                             if filename:
                                                 if not os.path.isdir(subject):
-                                                    # make a folder for this email (named after the subject)
+                                                    # Make folder with name as subject
                                                     os.mkdir(subject)
                                                 filepath = os.path.join(subject, filename)
-                                                # download attachment and save it
+                                                # Download attachment and save it
                                                 open(filepath, "wb").write(part.get_payload(decode=True))
                                 else:
-                                    # extract content type of email
+                                    # Fetch content type
                                     content_type = msg.get_content_type()
-                                    # get the email body
+
+                                    # Fetch body of Email
                                     body = msg.get_payload(decode=True).decode()
                                     if content_type == "text/plain":
-                                        # print only text email parts
+                                        # Print only text email parts
                                         print(body)
-                                if content_type == "text/html":
-                                    # if it's HTML, create a new HTML file and open it in browser
-                                    if not os.path.isdir(subject):
-                                        # make a folder for this email (named after the subject)
-                                        os.mkdir(subject)
-                                    filename = f"{subject[:50]}.html"
-                                    filepath = os.path.join(subject, filename)
-                                    # write the file
-                                    open(filepath, "w").write(body)
-                                    # open in the default browser
-                                    #webbrowser.open(filepath)
-                                    #print(filepath)
-                            
+                                    if content_type == "text/html":
+                                        # If mail is HTML type create a new HTML file 
+                                        if not os.path.isdir(subject):
+                                            # Make a folder for this email with name as subject
+                                            os.mkdir(subject)
+                                        filename = f"{subject[:50]}.html"
+                                        filepath = os.path.join(subject, filename)
+                                        # Write the file
+                                        open(filepath, "w").write(body)
+                                    
                             else:
                                 pass
-
+            # Stop when limit reached
             except StopIteration :
                 pass
-
+            #Close connection and logout 
             connection.close()
             connection.logout()
         except:
