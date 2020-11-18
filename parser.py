@@ -107,10 +107,10 @@ search_mail_parser = mail_subparsers.add_parser('search',help='Search Email from
 send_mail_parser = mail_subparsers.add_parser('send', help='Send Email from IITB Mail adding attachments ')
 
 #add arguements to search in IITB mail
-search_mail_parser.add_argument('-n', '--number', action='store', help='Show Top n mails in IITB Mailbox')
-search_mail_parser.add_argument('-k', '--keyword', action='store', help='Search in body of mail using keyword in IITB Mailbox')
-search_mail_parser.add_argument('-f', '--from_', action='store', help='Search using From/Senders mail address in IITB Mailbox')
-search_mail_parser.add_argument('-s', '--subject', action='store', help="Search using ubject in IITB Mailbox / substring match also possible")
+search_mail_parser.add_argument('-n', '--number', type=int, action='store', help='Show Top n mails in IITB Mailbox')
+search_mail_parser.add_argument('-k', '--keyword',type=str, action='store', help='Search in body of mail using keyword in IITB Mailbox')
+search_mail_parser.add_argument('-f', '--from_', type=str, action='store', help='Search using From/Senders mail address in IITB Mailbox')
+search_mail_parser.add_argument('-s', '--subject', type=str, action='store', help="Search using ubject in IITB Mailbox / substring match also possible")
 search_mail_parser.add_argument('-t', '--timeline', action='store', help='Search using timeline  in IITB Mailbox format DDMMYYYY DDMMYYYY', nargs=2)
 
 #add arguements to send from IITB mail
@@ -120,7 +120,7 @@ send_mail_parser.add_argument('-b','--body',type=str,action='store', help='Enter
 send_mail_parser.add_argument('-cc','--carboncopy',type=str,action='store', help='Enter CC address as a STRINGS separated by comma to send from IITB  Mailbox')
 send_mail_parser.add_argument('-bcc','--blindcarboncopy',type=str,action='store', help='Enter BCC address as a  STRINGS separated by comma to send from IITB  Mailbox')
 send_mail_parser.add_argument('-a','--attach',action='store_true', help='Enable attachments for email to send from IITB  Mailbox')
-send_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter attachments file path for email to send from IITB  Mailbox')
+send_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter mutiple attachments file path using comma separated strings for email to send from IITB  Mailbox')
 
 # ------------------------------------------------------ Dmail --------------------------------------------------------------
 
@@ -130,10 +130,10 @@ dsearch_mail_parser = dmail_subparsers.add_parser('search',help='Search Email fr
 dsend_mail_parser = dmail_subparsers.add_parser('send', help='Send Email from CSE Ldap Mail adding attachments ')
 
 #add arguements to search in CSE Ldap mail
-dsearch_mail_parser.add_argument('-n', '--number', action='store', help='Show Top n mails in CSE Ldap Mailbox')
-dsearch_mail_parser.add_argument('-k', '--keyword', action='store', help='Search in body of mail using keyword in CSE Ldap Mailbox')
-dsearch_mail_parser.add_argument('-f', '--from_', action='store', help='Search using From/Senders mail address in CSE Ldap Mailbox')
-dsearch_mail_parser.add_argument('-s', '--subject', action='store', help="Search using ubject in CSE LdapMailbox / substring match also possible")
+dsearch_mail_parser.add_argument('-n', '--number', type=int,action='store', help='Show Top n mails in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-k', '--keyword', type=str,action='store', help='Search in body of mail using keyword in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-f', '--from_', type=str,action='store', help='Search using From/Senders mail address in CSE Ldap Mailbox')
+dsearch_mail_parser.add_argument('-s', '--subject', type=str,action='store', help="Search using ubject in CSE LdapMailbox / substring match also possible")
 dsearch_mail_parser.add_argument('-t', '--timeline', action='store', help='Search using timeline  in CSE Ldap Mailbox format DDMMYYYY DDMMYYYY', nargs=2)
 
 #add arguements to send from CSE Ldap mail
@@ -143,7 +143,7 @@ dsend_mail_parser.add_argument('-b','--body',type=str,action='store', help='Ente
 dsend_mail_parser.add_argument('-cc','--carboncopy',type=str,action='store', help='Enter CC address as a STRINGS separated by comma to send from CSE Ldap Mailbox')
 dsend_mail_parser.add_argument('-bcc','--blindcarboncopy',type=str,action='store', help='Enter BCC address as a STRINGS separated by comma to send from CSE Ldap Mailbox')
 dsend_mail_parser.add_argument('-a','--attach',action='store_true', help='Enable attachments for email to send from CSE Ldap Mailbox')
-dsend_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter attachments file path for email to send from CSE Ldap Mailbox')
+dsend_mail_parser.add_argument('-fp','--filepath',action='store', help='Enter multiple attachments file path using comma separated strings for email to send from CSE Ldap Mailbox')
 
   
 # ---------------------------------------------------- Moodle ------------------------------------------------------------
@@ -295,6 +295,7 @@ elif args.portal == 'mail':
         if args.keyword is not None:  
             if args.number is not None:
                 obj = search_keyword()
+                
                 obj.keyword(str(args.keyword),limit=int(args.number))
             # mail search  -k
             else: 
