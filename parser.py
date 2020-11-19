@@ -115,7 +115,7 @@ search_mail_parser.add_argument('-t', '--timeline', action='store', help='Search
 
 #add arguements to send from IITB mail
 send_mail_parser.add_argument('-to','--targets',type=str,action='store', help='Enter target email address as a  STRINGS separated by comma to send from IITB Mailbox')
-send_mail_parser.add_argument('-sub','--subject',type=str,action='store', help='Enter Subject of email to send from IITB Mailbox')
+send_mail_parser.add_argument('-sub','--subject',action='store',nargs='?',help='Enter Subject of email to send from IITB Mailbox')
 send_mail_parser.add_argument('-b','--body',type=str,action='store', help='Enter Body of email to send from IITB  Mailbox')
 send_mail_parser.add_argument('-cc','--carboncopy',type=str,action='store', help='Enter CC address as a STRINGS separated by comma to send from IITB  Mailbox')
 send_mail_parser.add_argument('-bcc','--blindcarboncopy',type=str,action='store', help='Enter BCC address as a  STRINGS separated by comma to send from IITB  Mailbox')
