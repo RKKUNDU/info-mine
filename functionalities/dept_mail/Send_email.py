@@ -29,7 +29,8 @@ class send_mail:
 
             #Message treated as multipart
             msg = MIMEMultipart()
-            msg['Subject'] = subject
+            s=""
+            msg['Subject'] = s.join(subject)
             msg['From'] = sender
             msg['To'] = ', '.join(targets)
 
@@ -49,7 +50,8 @@ class send_mail:
 
             #If mail contains body
             if body is not None:
-                Body = body
+                b=""
+                Body = b.join(body)
                 txt = MIMEText(Body)
                 msg.attach(txt)
 
