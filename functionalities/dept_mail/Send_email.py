@@ -1,6 +1,8 @@
 import smtplib
 import ssl
 import os
+import os.path
+from os import path
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
@@ -29,7 +31,7 @@ class send_mail:
 
             #Message treated as multipart
             msg = MIMEMultipart()
-            msg['Subject'] = subject
+            msg['Subject'] = ' '.join(subject)
             msg['From'] = sender
             msg['To'] = ', '.join(targets)
 
@@ -49,7 +51,7 @@ class send_mail:
 
             #If mail contains body
             if body is not None:
-                Body = body
+                Body = ' '.join(body)
                 txt = MIMEText(Body)
                 msg.attach(txt)
 
@@ -59,6 +61,7 @@ class send_mail:
                 #Split for multiple attachments
                 path=filepath.split(',')
                 for pt in path:
+                    
                     type_file = pt.split('.')[-1]
                     #Txt type attachment
                     if type_file == 'txt':
@@ -94,7 +97,13 @@ class send_mail:
             
         except:
             print("Sending failed !! Check username / password / filepath")
-            os.remove("configs/dept_mail")
-            os.remove("configs/dept_mail.key")
+            if path.exists("configs/dept_mail"):
+                os.remove("configs/dept_mail")
+            if path.exists("configs/dept_mail.key"):
+                os.remove("configs/dept_mail.key")
+            if path.exists("configs/insti_mail"):
+                os.remove("configs/insti_mail")
+            if path.exists("configs/insti_mail.key"):
+                os.remove("configs/insti_mail.key")
 
 

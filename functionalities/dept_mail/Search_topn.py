@@ -5,6 +5,8 @@ import webbrowser
 import os
 import sys
 import pprint
+import os.path
+from os import path
 from security.dept_credentials import dept_credentials
 
 class search_topn:
@@ -117,5 +119,7 @@ class search_topn:
             connection.logout()
         except:
             print("Invalid username / password ")
-            os.remove("configs/dept_mail")
-            os.remove("configs/dept_mail.key")
+            if path.exists("configs/dept_mail"):
+                os.remove("configs/dept_mail")
+            if path.exists("configs/dept_mail.key"):
+                os.remove("configs/dept_mail.key")

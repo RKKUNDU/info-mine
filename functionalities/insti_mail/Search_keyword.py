@@ -3,6 +3,8 @@ import email
 from email.header import decode_header
 import webbrowser
 import os
+import os.path
+from os import path
 import sys
 from security.insti_credentials import insti_credentials
 
@@ -140,5 +142,7 @@ class search_keyword:
             connection.logout()
         except:
             print("Invalid username / password ")
-            os.remove("configs/insti_mail")
-            os.remove("configs/insti_mail.key")
+            if path.exists("configs/insti_mail"):
+                os.remove("configs/insti_mail")
+            if path.exists("configs/insti_mail.key"):
+                os.remove("configs/insti_mail.key")

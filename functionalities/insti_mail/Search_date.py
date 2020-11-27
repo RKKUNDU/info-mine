@@ -3,6 +3,8 @@ import email
 from email.header import decode_header
 import webbrowser
 import os
+import os.path
+from os import path
 import datetime
 import sys
 from security.insti_credentials import insti_credentials
