@@ -44,7 +44,24 @@
         in one spot. The term Info-Mine comes from mining for information from cse websites, moodle and the emails.
         
     \subsection{Installation}
-    To install the command line tool, we have a standalone script which clones the source code, it creates an executable in the bin folder of the user and moves the 
+        There are two ways to use this, via a linux command line, or through whatsapp. \\ 
+        \\
+        For the installation of the command line tool, perform the following:
+        \begin{itemize}
+            \item cd into the directory that you want to install this tool.
+            \item To download the installer to this directory, on your command line perform: \textbf{wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/RKKUNDU/info-mine/main/infomine-installer.sh}
+            \item Run the installer script with root priviliges, by: \textbf{sudo bash infomine-installer.sh}
+            \item Now you will be able to run 'infomine' from anywhere within your system.
+            \item Please read the remaining sections to perform the commands.
+        \end{itemize} 
+        To register for whatsapp, perform the following:
+        \begin{itemize}
+            \item Please go to \textbf{http://infomine.pythonanywhere.com/}
+            \item Enter the mentioned details.
+            \item You will receive instructions upon what to do next.
+            \item The instructions will mostly comprise of sending a certain message to a number on Whatsapp.
+            \item Please read the remaining sections to perform the commands.
+        \end{itemize}
 
 \section{Moodle}
 When using the moodle component of info-mine, they will have to provide their userid and password over command prompt.
@@ -54,8 +71,8 @@ These credentials are then used to make the subsequent requests.
 A user can then fetch 7 types of information from their moodle website, details of which are mentioned in the below subsections.
 To find more info from the command line the user can simply perform the below command
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle -h
-usage: parser.py moodle [-h] {quizzes,grades,forums,discussions,
+/home/user$: infomine moodle -h
+usage: infomine moodle [-h] {quizzes,grades,forums,discussions,
 courses,announcements,assignments} ...
 positional arguments:
 {quizzes,grades,forums,discussions,courses,announcements,assignments}
@@ -77,8 +94,8 @@ optional arguments:
 \subsection{Quizzes}
 To get information on how to use the quizzes module, the user can do so with a -h flag like
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle quizzes -h
-usage: parser.py moodle quizzes [-h] [-c CID]
+/home/user$: infomine moodle quizzes -h
+usage: infomine moodle quizzes [-h] [-c CID]
 
 optional arguments:
     -h, --help         show this help message and exit
@@ -88,7 +105,7 @@ As you can see from the usage, by providing no flags, the user will simply get a
 To get a list of the quizzes for a particular course, we need to use the -c flag with the course id(course id is with respect to moodle and can be found from the moodle courses module) we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle quizzes -c 222
+/home/user$: infomine moodle quizzes -c 222
 Sl No    Course id    id Name Total Score  Quiz Opens   Quiz Closes
 -------  -----------  ----  ----------------------------------------
 1          222    64  Quiz 6 2020-08-13 10:30:00  2020-08-16 23:59:00
@@ -98,8 +115,8 @@ Sl No    Course id    id Name Total Score  Quiz Opens   Quiz Closes
 \subsection{Grades}
 To get information on how to use the grades module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle grades -h
-usage: parser.py moodle grades [-h] -c CID
+/home/user$: infomine moodle grades -h
+usage: infomine moodle grades [-h] -c CID
 
 optional arguments:
   -h, --help         show this help message and exit
@@ -109,7 +126,7 @@ As you can see from the usage, by providing no flags, the user will simply get a
 To get a list of the grades for a particular course, we need to use the -c flag with the course id(course id is with respect to moodle and can be found from the moodle courses module) we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle grades -c 222
+/home/user$: infomine moodle grades -c 222
 sl No      Grade    Max  Percentage
 -------  ---------  -----  ------------
       1                 6  -
@@ -121,8 +138,8 @@ sl No      Grade    Max  Percentage
 \subsection{Forums}
 To get information on how to use the forums module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle forums -h
-usage: parser.py moodle forums [-h] -c CID
+/home/user$: infomine moodle forums -h
+usage: infomine moodle forums [-h] -c CID
                                [-n NUMBER]
 
 optional arguments:
@@ -137,7 +154,7 @@ For using the forums module we need to provide -c flag and provide the course id
 To get a list of 'n' forums for a course we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle forums -c 224 -n 2
+/home/user$: infomine moodle forums -c 224 -n 2
 Forum ID  Forum Name
 ----------  ----------------
        223  Announcements
@@ -147,7 +164,7 @@ Forum ID  Forum Name
 \subsection{Discussions}
 To get information on how to use the discussions module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-usage: parser.py moodle discussions [-h] -f FORUM_ID [-n NUMBER]
+usage: infomine moodle discussions [-h] -f FORUM_ID [-n NUMBER]
 
 optional arguments:
     -h, --help            show this help message and exit
@@ -160,7 +177,7 @@ For using the discussions module we need to provide -f flag and provide the foru
 To get a list of 'n' discussions for a forum we can for example:
 
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle discussions -f 223 -n 2
+/home/user$: infomine moodle discussions -f 223 -n 2
 Discussions:
          1. 2020-10-21 11:23:59 PA4 description posted
 Check out the next programming assignment. 
@@ -172,8 +189,8 @@ For any issues regarding the marks/solutions in midsem please fill this form.htt
 \subsection{Courses}
 To get information on how to use the courses module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle courses -h
-usage: parser.py moodle courses [-h]
+/home/user$: infomine moodle courses -h
+usage: infomine moodle courses [-h]
 
 optional arguments:
     -h, --help  show this help message and exit
@@ -185,7 +202,7 @@ Also, course code information is provided.
 To get a list of courses we have registered:\\
 \\
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle courses
+/home/user$: infomine moodle courses
 sl No    Course id    Progress  Short Name     Full Name
 -------  ----------- ----------  ------------- ----------
 1  226   7.69231  CS 765-2020-1  Introduction to Blockchain
@@ -196,8 +213,8 @@ sl No    Course id    Progress  Short Name     Full Name
 \subsection{Announcements}
 To get information on how to use the announcements module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle announcements -h
-usage: parser.py moodle announcements [-h] -c CID [-n NUMBER]
+/home/user$: infomine moodle announcements -h
+usage: infomine moodle announcements [-h] -c CID [-n NUMBER]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -208,7 +225,7 @@ optional arguments:
 For using the announcements module we need to provide -c flag and provide the course id (course id is with respect to moodle and can be found from the moodle course module), it is mandatory to know which course's announcements you are trying to fetch. The -n flag is to provide the top number of entries we want to filter and see in the output\\
 To get a list of 'n' announcements for a course we can for example:
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle announcements -c 226 -n 1
+/home/user$: infomine moodle announcements -c 226 -n 1
 Announcements:
 	 1. 2020-11-16 15:34:42 last lecture uploaded
 Final lecture on Payment Channel Details has been uploaded (#26). 
@@ -218,8 +235,8 @@ Please see these before the Live Session on Thursday.Vinay
 \subsection{Assignments}
 To get information on how to use the assignments module, the user can do so with a -h flag like 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py moodle assignments -h
-usage: parser.py moodle assignments [-h] [-d] [-c COURSE]
+/home/user$: infomine moodle assignments -h
+usage: infomine moodle assignments [-h] [-d] [-c COURSE]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -230,7 +247,7 @@ optional arguments:
 For using the assignments module, the user needs to -c flag and provide the name of the course(or the substring of it). The -d flag filters out the due assignments. If no -c flag is provided it will list out all the assignments.\\
 To get a list of the due assignments for a course we can for example:
 \begin{minted}[frame=lines, framesep=4mm]{text}
-/home/user$: python3 parser.py moodle assignments -c block -d
+/home/user$: infomine moodle assignments -c block -d
 sl No  Course Name    Assignment    Due Date
 -------  -------------  ------------  -------------------
       1  CS 765-2020-1  Assignment 2  2020-12-08 23:59:00
@@ -241,8 +258,8 @@ The CSE component internally calls the cse website's APIs and fetches the requir
 A user can fetch 4 types of information from the cse tool, details of which are mentioned in the below subsections.
 A user can also find out more information by doing:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse -h
-usage: parser.py cse [-h] {courses,students,faculties,news} ...
+/home/user$: infomine cse -h
+usage: infomine cse [-h] {courses,students,faculties,news} ...
 
 positional arguments:
   {courses,students,faculties,news}
@@ -262,10 +279,10 @@ We can also fetch other information regarding a course such as it's description,
 To filter them out, we have the -f flag, we can filter them based on the course id, or course name or even the instructor name. This enables a user
 with many options, For example, if a user wants to list out all the courses offered by professor 'X', user can do so using the appropriate flags
 along with the -f flag.To get more info on the courses subcomponent, the user can do so using the -h flag\\
-\textbf{/home/user\$: python3 parser.py cse courses -h}\\
+\textbf{/home/user\$: infomine cse courses -h}\\
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse courses -h
-usage: parser.py cse courses [-h] [-a] [-s] [-d] [-D] [-p] [-t] [-f FILTER]
+/home/user$: infomine cse courses -h
+usage: infomine cse courses [-h] [-a] [-s] [-d] [-D] [-p] [-t] [-f FILTER]
 
 optional arguments:
     -h, --help            show this help message and exit
@@ -282,7 +299,7 @@ optional arguments:
 Some examples(Two examples):\\
 To fetch all courses offered by Prof Kavi Arya along with description and text refs we can simply do:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse courses -f kavi -D -t
+/home/user$: infomine cse courses -f kavi -D -t
 Course Name        Embedded Systems
 Course Code        CS 684
 Course Instructor  Prof. Kavi Arya
@@ -325,7 +342,7 @@ References         Jack Ganssle, "The Art of Designing Embedded Systems",
 
 Let's have a look at another example, where a user wants to know all the systems courses offered in spring, user can simply do:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse courses -f systems -s
+/home/user$: infomine cse courses -f systems -s
 Semester  Course Code    Course Name                                           
 --------  -------------  --------------  
 Spring   CS 317         Database and Information Systems                       
@@ -346,8 +363,8 @@ that have been published in the cse website, this can help a user find informati
 under an advisor, names of all students with a specific interest and so on.\\
 To get more info, the user can do using the -h flag:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user\$: python3 parser.py cse students -h
-usage: parser.py cse students [-h] -b BATCH [-i] [-a] [-f FILTER] [-A ADVISOR]
+/home/user\$: infomine cse students -h
+usage: infomine cse students [-h] -b BATCH [-i] [-a] [-f FILTER] [-A ADVISOR]
                             [-I INTEREST]
 
 optional arguments:
@@ -366,7 +383,7 @@ optional arguments:
 For example, to fetch the names of phd students who have an interest natural language processing
 we can do so by:\\
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse students -b phd -a -i -I natural
+/home/user$: infomine cse students -b phd -a -i -I natural
 User ID     Name             Advisor                      
 ----------  ---------------  ---------------------------  
 diptesh     Diptesh Kanojia  Prof. Pushpak Bhattacharyya  
@@ -379,8 +396,8 @@ a faculty's extension, interests. We can also filter faculties based on name
 and interests. By providing no flags, it will simply return a list of all the faculties.
 To find more info on how to use this, perform:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user\$: python3 parser.py cse faculties -h
-usage: parser.py cse faculties [-h] [-i] [-w] [-e] [-r] [-F FILTER] [-I INTEREST]
+/home/user\$: infomine cse faculties -h
+usage: infomine cse faculties [-h] [-i] [-w] [-e] [-r] [-F FILTER] [-I INTEREST]
 
 optional arguments:
 -h, --help            show this help message and exit
@@ -396,7 +413,7 @@ filter faculties based on interest
 Example where a user wants to fetch room information of faculties that 
 have an interest in distributed systems. 
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse faculties -I 'distributed systems' -r
+/home/user$: infomine cse faculties -I 'distributed systems' -r
 User ID    Name                Room                                          
 ---------  ------------------  --------------------------------------------  
 sri        Sridhar Iyer        Room no. SIA-420, Kanwal Rekhi Building       
@@ -410,8 +427,8 @@ This sub-component helps us find out the latest news posted on the cse website.
 We can filter the news based on the timeline, a year and also get more details using the -t, -y and -d flags respectively.
 For usage of this command, perform:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user\$: python3 parser.py cse news -h
-usage: parser.py cse news [-h] [-d] [-t TIMELINE TIMELINE | -y YEAR]
+/home/user\$: infomine cse news -h
+usage: infomine cse news [-h] [-d] [-t TIMELINE TIMELINE | -y YEAR]
 
 optional arguments:
 -h, --help            show this help message and exit
@@ -422,7 +439,7 @@ Show news in a timeline (DDMMYYYY DDMMYYYY)
 \end{minted}
 To fetch news updates, in a certain timeline we can:
 \begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
-/home/user$: python3 parser.py cse news -t 16102020 17112020
+/home/user$: infomine cse news -t 16102020 17112020
 Date        Snippet
 ----------  --------------------------------------------
 2020-10-26  PhD students Ms. Durga Sivasubramanian and 
@@ -435,30 +452,80 @@ Info-Mine, also consists of a component which helps us send and search for insti
 During the first time usage of this command, user credentials are asked, these credentials are encrypted and stored in the configs folder. These credentials are used for subsequent requests to send and receive mails.\\
 \textbf{PLEASE NOTE: This component can send/search emails for both institute and department, the usage is the same for both, except that for department mail it is 'dmail' and for institute mail it is 'mail', this doc will show it only for mail.}\\
 For usage of mail command, perform:\\
-\textbf{/home/user\$: python3 parser.py mail -h}\\
+\textbf{/home/user\$: infomine mail -h}\\
 \\
-This gives out the options from which the user can send and search mails.
+This gives out the options from which the user can send and search mails.\\
+
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+usage: infomine mail [-h] {search,send} ...
+
+positional arguments:
+{search,send}  IITB Mail commands help
+search       Search Email from IITB Mailbox using filters
+send         Send Email from IITB Mail adding attachments
+
+optional arguments:
+-h, --help     show this help message and exit
+\end{minted}
+
 \subsection{Sending mail}
 To send an email, a user has multiple options, such as -to for recepient, -sub for the subject, -b for body, -a for attachment, -fp for the local path of the attachment, -cc and -bcc for cc and bcc. For usage of this command: \\
-\textbf{/home/user\$: python3 parser.py mail send -h}\\
+\textbf{/home/user\$: infomine mail send -h}\\
 \\
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+usage: infomine mail send [-h] [-to TARGETS] [-sub [SUBJECT [SUBJECT ...]]] [-b [BODY [BODY ...]]] [-cc CARBONCOPY]
+[-bcc BLINDCARBONCOPY] [-a] [-fp FILEPATH]
+
+optional arguments:
+-h, --help            show this help message and exit
+-to TARGETS, --targets TARGETS
+Enter target email address as a STRINGS separated by comma to send from IITB Mailbox
+-sub [SUBJECT [SUBJECT ...]], --subject [SUBJECT [SUBJECT ...]]
+Enter Subject of email to send from IITB Mailbox
+-b [BODY [BODY ...]], --body [BODY [BODY ...]]
+Enter Body of email to send from IITB Mailbox
+-cc CARBONCOPY, --carboncopy CARBONCOPY
+Enter CC address as a STRINGS separated by comma to send from IITB Mailbox
+-bcc BLINDCARBONCOPY, --blindcarboncopy BLINDCARBONCOPY
+Enter BCC address as a STRINGS separated by comma to send from IITB Mailbox
+-a, --attach          Enable attachments for email to send from IITB Mailbox
+-fp FILEPATH, --filepath FILEPATH
+Enter mutiple attachments file path using comma separated strings for email to send from IITB Mailbox
+\end{minted}
 Example command to send an email with subject, body and attachment (Without cc and bcc):\\
-\textbf{/home/user\$: python3 parser.py mail send -to "test@iitb.ac.in" -sub "test" -b "Test body" -a -fp "/root/path-to-file"}\\
+\textbf{/home/user\$: infomine mail send -to "test@iitb.ac.in" -sub "test" -b "Test body" -a -fp "/root/path-to-file"}\\
 Similarily, -cc and -bcc arguments can be provided to add cc and bcc recipients.
 
 \subsection{Searching mail}
 To search for an email, a user has multiple options, such as -n to get the top n latest emails, -k to search for an email based on a keyword, -f to search based on from address, -s to search based on subject, -t to search based on the timeline.
 For usage of search command in mail, perform:\\
-\textbf{/home/user\$: python3 parser.py mail search -h}\\
+\textbf{/home/user\$: infomine mail search -h}\\
 \\
+
+\begin{minted}[frame=lines, framesep=4mm, encoding=utf8]{text}
+usage: infomine mail search [-h] [-n NUMBER] [-k KEYWORD] [-f FROM_] [-s SUBJECT] [-t TIMELINE TIMELINE]
+
+optional arguments:
+-h, --help            show this help message and exit
+-n NUMBER, --number NUMBER
+Show Top n mails in IITB Mailbox
+-k KEYWORD, --keyword KEYWORD
+Search in body of mail using single keyword in IITB Mailbox
+-f FROM_, --from_ FROM_
+Search using From/Senders mail address in IITB Mailbox
+-s SUBJECT, --subject SUBJECT
+Search using keyword in subject of IITB Mailbox / substring match
+-t TIMELINE TIMELINE, --timeline TIMELINE TIMELINE
+Search using timeline in IITB Mailbox format DDMMYYYY DDMMYYYY
+\end{minted}
 Example command to search top 2 latest emails :\\
-\textbf{/home/user\$: python3 parser.py mail search -n 2}\\
+\textbf{/home/user\$: infomine mail search -n 2}\\
 \\
 Example command to search top 2 latest emails between a specified timeline(The below command fetches the two latest emails between 10/11/20 and 15/11/20):\\
-\textbf{/home/user\$: python3 parser.py mail search -n 2 -t 10112020 15112020}\\
+\textbf{/home/user\$: infomine mail search -n 2 -t 10112020 15112020}\\
 \\
 Example command to search top 2 latest emails with a specified subject (The string given will match substrings of the mail subjects):\\
-\textbf{/home/user\$: python3 parser.py mail search -n 2 -s "power"}\\
+\textbf{/home/user\$: infomine mail search -n 2 -s "power"}\\
 \\
 The other commands can be used in a similar way by the user to fetch the required mails.
 
@@ -470,7 +537,7 @@ Here you will have to provide all the details required and click the submit butt
 Number: +1 (415) 523-8886 \\
 Initial Message: Join friend-identity \\
 Doing this will create a channel of communication between the whatsapp bot and the user. \\
-\textbf{In order to fetch information from the whatsapp bot, we have to perform the same commands as shown in sections 2, 3 and 4, without the "python3 parse.py"}\\
+\textbf{In order to fetch information from the whatsapp bot, we have to perform the same commands as shown in sections 2, 3 and 4, without the "infomine"}\\
 As seen in the image below: \\
 \\
 \includegraphics[width=14cm, height=10cm]{whatsappbot}

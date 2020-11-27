@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+usage: infomine mail [\PYGZhy{}h] \PYGZob{}search,send\PYGZcb{} ...
+
+positional arguments:
+\PYGZob{}search,send\PYGZcb{}  IITB Mail commands help
+search       Search Email from IITB Mailbox using filters
+send         Send Email from IITB Mail adding attachments
+
+optional arguments:
+\PYGZhy{}h, \PYGZhy{}\PYGZhy{}help     show this help message and exit
+\end{Verbatim}

@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{3}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{3}%
+\contentsline {subsection}{\numberline {1.2}Installation}{3}%
+\contentsline {section}{\numberline {2}Moodle}{5}%
+\contentsline {subsection}{\numberline {2.1}Quizzes}{5}%
+\contentsline {subsection}{\numberline {2.2}Grades}{6}%
+\contentsline {subsection}{\numberline {2.3}Forums}{7}%
+\contentsline {subsection}{\numberline {2.4}Discussions}{7}%
+\contentsline {subsection}{\numberline {2.5}Courses}{8}%
+\contentsline {subsection}{\numberline {2.6}Announcements}{9}%
+\contentsline {subsection}{\numberline {2.7}Assignments}{10}%
+\contentsline {section}{\numberline {3}CSE}{11}%
+\contentsline {subsection}{\numberline {3.1}Courses}{11}%
+\contentsline {subsection}{\numberline {3.2}Students}{13}%
+\contentsline {subsection}{\numberline {3.3}Faculties}{14}%
+\contentsline {subsection}{\numberline {3.4}News}{15}%
+\contentsline {section}{\numberline {4}Mail}{17}%
+\contentsline {subsection}{\numberline {4.1}Sending mail}{17}%
+\contentsline {subsection}{\numberline {4.2}Searching mail}{18}%
+\contentsline {section}{\numberline {5}Whatsapp Bot}{20}%
+\contentsline {section}{\numberline {6}Future scope}{21}%

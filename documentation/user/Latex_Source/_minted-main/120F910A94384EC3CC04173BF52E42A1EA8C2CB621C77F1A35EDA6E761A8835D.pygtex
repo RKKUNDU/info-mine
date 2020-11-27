@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+usage: infomine mail send [\PYGZhy{}h] [\PYGZhy{}to TARGETS] [\PYGZhy{}sub [SUBJECT [SUBJECT ...]]] [\PYGZhy{}b [BODY [BODY ...]]] [\PYGZhy{}cc CARBONCOPY]
+[\PYGZhy{}bcc BLINDCARBONCOPY] [\PYGZhy{}a] [\PYGZhy{}fp FILEPATH]
+
+optional arguments:
+\PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+\PYGZhy{}to TARGETS, \PYGZhy{}\PYGZhy{}targets TARGETS
+Enter target email address as a STRINGS separated by comma to send from IITB Mailbox
+\PYGZhy{}sub [SUBJECT [SUBJECT ...]], \PYGZhy{}\PYGZhy{}subject [SUBJECT [SUBJECT ...]]
+Enter Subject of email to send from IITB Mailbox
+\PYGZhy{}b [BODY [BODY ...]], \PYGZhy{}\PYGZhy{}body [BODY [BODY ...]]
+Enter Body of email to send from IITB Mailbox
+\PYGZhy{}cc CARBONCOPY, \PYGZhy{}\PYGZhy{}carboncopy CARBONCOPY
+Enter CC address as a STRINGS separated by comma to send from IITB Mailbox
+\PYGZhy{}bcc BLINDCARBONCOPY, \PYGZhy{}\PYGZhy{}blindcarboncopy BLINDCARBONCOPY
+Enter BCC address as a STRINGS separated by comma to send from IITB Mailbox
+\PYGZhy{}a, \PYGZhy{}\PYGZhy{}attach          Enable attachments for email to send from IITB Mailbox
+\PYGZhy{}fp FILEPATH, \PYGZhy{}\PYGZhy{}filepath FILEPATH
+Enter mutiple attachments file path using comma separated strings for email to send from IITB Mailbox
+\end{Verbatim}

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine moodle assignments \PYGZhy{}h
+usage: infomine moodle assignments [\PYGZhy{}h] [\PYGZhy{}d] [\PYGZhy{}c COURSE]
+
+optional arguments:
+  \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+  \PYGZhy{}d, \PYGZhy{}\PYGZhy{}due             Show only due assignments
+  \PYGZhy{}c COURSE, \PYGZhy{}\PYGZhy{}course COURSE
+                        Filter for course name
+\end{Verbatim}

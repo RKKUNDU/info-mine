@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+usage: infomine moodle discussions [\PYGZhy{}h] \PYGZhy{}f FORUM\PYGZus{}ID [\PYGZhy{}n NUMBER]
+
+optional arguments:
+    \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+    \PYGZhy{}f FORUM\PYGZus{}ID, \PYGZhy{}\PYGZhy{}forum\PYGZhy{}id FORUM\PYGZus{}ID
+                        Show discussions of given forum
+    \PYGZhy{}n NUMBER, \PYGZhy{}\PYGZhy{}number NUMBER
+                        Show only top n discussions
+\end{Verbatim}

@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-/home/user\PYGZdl{}: python3 parser.py moodle grades \PYGZhy{}h
-usage: parser.py moodle grades [\PYGZhy{}h] \PYGZhy{}c CID
-
-optional arguments:
-  \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help         show this help message and exit
-  \PYGZhy{}c CID, \PYGZhy{}\PYGZhy{}cid CID  Show grades of given course
-\end{Verbatim}

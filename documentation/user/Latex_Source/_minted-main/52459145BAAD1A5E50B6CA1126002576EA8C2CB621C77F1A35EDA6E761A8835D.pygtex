@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine cse \PYGZhy{}h
+usage: parser.py cse [\PYGZhy{}h] \PYGZob{}courses,students,faculties,news\PYGZcb{} ...
+
+positional arguments:
+  \PYGZob{}courses,students,faculties,news\PYGZcb{}
+                        CSE commands help
+    courses             Info about courses
+    students            Info about students
+    faculties           Info about faculties
+    news                Get news
+
+optional arguments:
+  \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+\end{Verbatim}

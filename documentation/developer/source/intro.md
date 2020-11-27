@@ -13,13 +13,16 @@ This causes a student to visit multiple sites many times which can get discomfor
 Thus, the aim of this project is to reduce the hindrance in visting many places and create a tool that helps students to get all their info in one spot. 
 The term Info-Mine comes from mining for information from cse websites, moodle and the emails.
 
-### Installation guide
+### Installation guide for developers
 
 To install the command line tool, we have a standalone script which clones the source code, it creates an executable in the bin folder of the user and moves the code to 
 
-* Should have python 3.6.x or greater
 * Should have git installed
-* pip should be installed
 * Before getting started off with the developer docs, please do read the user docs.
-* Run the infomine-installer.sh
+* cd into the directory that you want to install this tool
+* To download the installer to this directory, on your command line per-form:wget  –no-check-certificate  –content-dispositionhttps://raw.githubusercontent.com/RKKUNDU/info-mine/main/infomine-installer.sh
+* Run the installer script with root priviliges, by:sudo bash infomine-installer.sh
+* Now that it has been installed, please familiarize yourself with the tool.
+* Please clone the repository by performing: git clone https://github.com/RKKUNDU/info-mine.git
+* Go through the rest of the developer docs to add features, experiment and so on.
 

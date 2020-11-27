@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine moodle courses \PYGZhy{}h
+usage: parser.py moodle courses [\PYGZhy{}h]
+
+optional arguments:
+    \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help  show this help message and exit
+\end{Verbatim}

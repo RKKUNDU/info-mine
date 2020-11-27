@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine moodle announcements \PYGZhy{}h
+usage: parser.py moodle announcements [\PYGZhy{}h] \PYGZhy{}c CID [\PYGZhy{}n NUMBER]
+
+optional arguments:
+  \PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+  \PYGZhy{}c CID, \PYGZhy{}\PYGZhy{}cid CID     Show announcements of given course
+  \PYGZhy{}n NUMBER, \PYGZhy{}\PYGZhy{}number NUMBER
+                        Show only top n announcements
+\end{Verbatim}

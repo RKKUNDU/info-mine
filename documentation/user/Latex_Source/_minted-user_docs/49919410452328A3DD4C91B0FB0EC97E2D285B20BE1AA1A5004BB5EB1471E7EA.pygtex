@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine cse news \PYGZhy{}h
+usage: infomine cse news [\PYGZhy{}h] [\PYGZhy{}d] [\PYGZhy{}t TIMELINE TIMELINE | \PYGZhy{}y YEAR]
+
+optional arguments:
+\PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+\PYGZhy{}d, \PYGZhy{}\PYGZhy{}details         Show detailed news
+\PYGZhy{}t TIMELINE TIMELINE, \PYGZhy{}\PYGZhy{}timeline TIMELINE TIMELINE
+Show news in a timeline (DDMMYYYY DDMMYYYY)
+\PYGZhy{}y YEAR, \PYGZhy{}\PYGZhy{}year YEAR  Show news of a year
+\end{Verbatim}

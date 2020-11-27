@@ -95,3 +95,11 @@ The department mail has five classes for searching the email based on different 
     ```
 #### Sending mails
 * This is a standalone script 'Send_mail.py' which will send the email based on the flags passed to it.
+
+#### Developing the email component
+* This component uses the smtp package to send and receive emails.
+* When a user logs in the first time, the user token is stored in an encrypted manner in the email(either insti or department) file under the configs folder.
+* This token is decrypted just before every call and a request is sent to the smtp server from where the mails are fetched.
+* Please go through the moodle component's source code for more details on parsing and fetching emails.
+* To add any extra flags, please do so in the main 'parser.py' file.
+* A developer can add more functionalities by adding more flags to the existing classes.

@@ -42,7 +42,7 @@ def load_key(self):
 '''
 Load the previously generated key
 '''
-
+In order to ad
 def decrypt_message(self,encrypted_message):
 '''
 Decrypts an encrypted message
@@ -70,3 +70,8 @@ When a message arrives from our Twilio sandbox account, it is processed by:
   This function determines what kind of a command has been sent as a whatsapp message and calls the appropriate function.
   '''
 ```
+
+#### Developing the whatsapp bot component
+* This component re-uses all the code from cse, email and moodle modules. 
+* In order to develop this module, please develop cse, email and moodle modules.
+* Source code can be found in the django-whatsappbot-server folder.

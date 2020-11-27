@@ -1,0 +1,611 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.9)  27 NOV 2020 11:39
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**user_docs.tex
+(./user_docs.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box45
+\beforetitleunit=\skip49
+\aftertitleunit=\skip50
+\ttl@plus=\dimen135
+\ttl@minus=\dimen136
+\ttl@toksa=\toks16
+\titlewidth=\dimen137
+\titlewidthlast=\dimen138
+\titlewidthfirst=\dimen139
+)
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count175
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count176
+\FV@InFile=\read2
+\FV@TabBox=\box46
+\c@FancyVerbLine=\count177
+\FV@StepNumber=\count178
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count179
+\output=\toks18
+\linenoprevgraf=\count180
+\linenumbersep=\dimen140
+\linenumberwidth=\dimen141
+\c@linenumber=\count181
+\c@pagewiselinenumber=\count182
+\c@LN@truepage=\count183
+\c@internallinenumber=\count184
+\c@internallinenumbers=\count185
+\quotelinenumbersep=\dimen142
+\bframerule=\dimen143
+\bframesep=\dimen144
+\bframebox=\box47
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count186
+\c@FV@TrueTabCounter=\count187
+\FV@TabBox@Group=\box48
+\FV@TmpLength=\skip51
+\c@FV@HighlightLinesStart=\count188
+\c@FV@HighlightLinesStop=\count189
+\FV@LoopCount=\count190
+\FV@NCharsBox=\box49
+\FV@BreakIndent=\dimen145
+\FV@BreakIndentNChars=\count191
+\FV@BreakSymbolSepLeft=\dimen146
+\FV@BreakSymbolSepLeftNChars=\count192
+\FV@BreakSymbolSepRight=\dimen147
+\FV@BreakSymbolSepRightNChars=\count193
+\FV@BreakSymbolIndentLeft=\dimen148
+\FV@BreakSymbolIndentLeftNChars=\count194
+\FV@BreakSymbolIndentRight=\dimen149
+\FV@BreakSymbolIndentRightNChars=\count195
+\c@FancyVerbLineBreakLast=\count196
+\FV@LineBox=\box50
+\FV@LineIndentBox=\box51
+\FV@LineWidth=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count197
+\calc@Bcount=\count198
+\calc@Adimen=\dimen151
+\calc@Bdimen=\dimen152
+\calc@Askip=\skip52
+\calc@Bskip=\skip53
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count199
+\calc@Cskip=\skip54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "user_docs.w18")...executed.
+
+ (./user_docs.w18)
+runsystem(rm -- "user_docs.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count266
+\decimalpart=\count267
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip55
+\fb@frw=\dimen153
+\fb@frh=\dimen154
+\FrameRule=\dimen155
+\FrameSep=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count268
+\float@exts=\toks19
+\float@box=\box52
+\@float@everytoks=\toks20
+\@floatcapt=\box53
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box54
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count269
+\c@minted@pygmentizecounter=\count270
+\@float@every@listing=\toks21
+\c@listing=\count271
+)
+runsystem(mkdir -p _minted-user_docs)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+runsystem(which pygmentize && touch user_docs.aex)...executed.
+
+runsystem(rm user_docs.aex)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count272
+\l__pdf_internal_box=\box55
+)
+(./user_docs.aux)
+\openout1 = `user_docs.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count273
+\scratchdimen=\dimen159
+\scratchbox=\box56
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen160
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 32.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 32.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./user_docs.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write5
+\openout5 = `user_docs.toc'.
+
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 55.
+
+Overfull \hbox (35.57489pt too wide) in paragraph at lines 54--56
+\OT1/cmtt/m/n/12 githubusercontent . com / RKKUNDU / info-[]mine / main / infom
+ine-[]installer .
+ []
+
+[3
+
+] [4]
+\openout3 = `user_docs.pyg'.
+
+ (./_minted-user_docs/default-pyg-prefix.pygstyle)
+(./_minted-user_docs/default.pygstyle)
+(./_minted-user_docs/77469BCE02116275F018BA2278DC95372D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/5E3F082FA4DD8F2C1EDDF933DBFB040D2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [5
+
+])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/5227AB29555BDA65993B4C9FADBE202BC497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/1D10CA71090C69DE792C98A5748128BE2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/841DC649EBA834FA4D96FADB5C8A6515C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex [6])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/B8F5B00942AD7E9DA42ACD8EA56D05DB2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/46E432665EA7901BA52F438F2C218F38C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/0ADF118F86A7C35A806D0C1ECF30F0262D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [7])
+\openout3 = `user_docs.pyg'.
+
+runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -o _mi
+nted-user_docs/92DCF504622653C8AEF0D52D9B06F2E1C497A5174D8AE5E93D1FECA8D9FF2F4F
+.pygtex user_docs.pyg)...executed.
+
+
+(./_minted-user_docs/92DCF504622653C8AEF0D52D9B06F2E1C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 8.
+)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/FAB022F2A9D24A0375E88F656104CFDD2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/08982759C12F432CCD5B8264A1CDC2B8C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 201--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--1
+
+ []
+
+[8])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/BD8C9EDA937663DE0441DD2023C897A02D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/317D18F28E694FED16DEE01C1D277AD0C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex [9])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/5DDBA9AAC6FF044C09C9A9ED7ED4A5C42D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/64851FF3BE6B5017516372F5184D3998C497A5174D8AE5E93D1FECA8D9
+FF2F4F.pygtex) [10]
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/243CD48976BECC4012059313672FE51F2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 280--285
+
+ []
+
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/1010D644946BC071B35656109E47BF582D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 286--1
+
+ []
+
+[11
+
+])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/558E8B9AE580D6600D8A437845E793582D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [12])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/3EFB25795A849E577D7FDE217AB45E312D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/919F91526074648BBE51108625730C742D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [13])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/F2C347E561D9B63CF0559BB5D6EEA1752D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 387--1
+
+ []
+
+)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/8D420B13E46FED5CAA49966DD496BB192D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [14])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/DCBB115F80408259E0F59FFE50A620C92D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/49919410452328A3DD4C91B0FB0EC97E2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [15])
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/DC70076249AC38F8F7542272FE23C9C52D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex) [16]
+Underfull \hbox (badness 10000) in paragraph at lines 455--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--462
+
+ []
+
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/0A8E6F61FF09ED88477F506BBB4592BB2D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex)
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/120F910A94384EC3CC04173BF52E42A12D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 476--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--1
+
+ []
+
+[17
+
+])
+Underfull \hbox (badness 10000) in paragraph at lines 504--508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--508
+
+ []
+
+\openout3 = `user_docs.pyg'.
+
+
+(./_minted-user_docs/BB84657BCEFDA44EDFDFF7B3C6B81FF52D285B20BE1AA1A5004BB5EB14
+71E7EA.pygtex [18])
+Underfull \hbox (badness 10000) in paragraph at lines 525--535
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--535
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--535
+
+ []
+
+[19]
+<whatsappbot.png, id=71, 979.66pt x 916.42375pt>
+File: whatsappbot.png Graphic file (type png)
+<use whatsappbot.png>
+Package pdftex.def Info: whatsappbot.png  used on input line 547.
+(pdftex.def)             Requested size: 398.32971pt x 284.52191pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--548
+
+ []
+
+
+Overfull \hbox (8.32971pt too wide) in paragraph at lines 538--548
+[] 
+ []
+
+[20
+
+ <./whatsappbot.png>]
+runsystem(rm _minted-user_docs/16598BFBC507A7C594042AD233E588AAC497A5174D8AE5E9
+3D1FECA8D9FF2F4F.pygtex)...executed.
+
+ [21
+
+] (./user_docs.aux)
+runsystem(rm user_docs.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5978 strings out of 483183
+ 112526 string characters out of 5966293
+ 388036 words of memory out of 5000000
+ 20804 multiletter control sequences out of 15000+600000
+ 544660 words of font info for 65 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 41i,8n,37p,845b,530s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/pramod/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1200.60
+0pk> </home/pramod/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.
+600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on user_docs.pdf (21 pages, 284629 bytes).
+PDF statistics:
+ 109 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

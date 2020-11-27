@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+/home/user\PYGZdl{}: infomine cse faculties \PYGZhy{}h
+usage: infomine cse faculties [\PYGZhy{}h] [\PYGZhy{}i] [\PYGZhy{}w] [\PYGZhy{}e] [\PYGZhy{}r] [\PYGZhy{}F FILTER] [\PYGZhy{}I INTEREST]
+
+optional arguments:
+\PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+\PYGZhy{}i, \PYGZhy{}\PYGZhy{}interest        Show faculty\PYGZsq{}s interests
+\PYGZhy{}w, \PYGZhy{}\PYGZhy{}website         Show faculty\PYGZsq{}s website
+\PYGZhy{}e, \PYGZhy{}\PYGZhy{}extension       Show faculty\PYGZsq{}s extension
+\PYGZhy{}r, \PYGZhy{}\PYGZhy{}room            Show faculty\PYGZsq{}s room details
+\PYGZhy{}F FILTER, \PYGZhy{}\PYGZhy{}filter FILTER
+filter faculties based on name
+\PYGZhy{}I INTEREST, \PYGZhy{}\PYGZhy{}Interest INTEREST
+filter faculties based on interest
+\end{Verbatim}

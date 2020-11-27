@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+usage: infomine mail search [\PYGZhy{}h] [\PYGZhy{}n NUMBER] [\PYGZhy{}k KEYWORD] [\PYGZhy{}f FROM\PYGZus{}] [\PYGZhy{}s SUBJECT] [\PYGZhy{}t TIMELINE TIMELINE]
+
+optional arguments:
+\PYGZhy{}h, \PYGZhy{}\PYGZhy{}help            show this help message and exit
+\PYGZhy{}n NUMBER, \PYGZhy{}\PYGZhy{}number NUMBER
+Show Top n mails in IITB Mailbox
+\PYGZhy{}k KEYWORD, \PYGZhy{}\PYGZhy{}keyword KEYWORD
+Search in body of mail using single keyword in IITB Mailbox
+\PYGZhy{}f FROM\PYGZus{}, \PYGZhy{}\PYGZhy{}from\PYGZus{} FROM\PYGZus{}
+Search using From/Senders mail address in IITB Mailbox
+\PYGZhy{}s SUBJECT, \PYGZhy{}\PYGZhy{}subject SUBJECT
+Search using keyword in subject of IITB Mailbox / substring match
+\PYGZhy{}t TIMELINE TIMELINE, \PYGZhy{}\PYGZhy{}timeline TIMELINE TIMELINE
+Search using timeline in IITB Mailbox format DDMMYYYY DDMMYYYY
+\end{Verbatim}

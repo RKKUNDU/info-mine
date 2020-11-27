@@ -183,6 +183,17 @@
 <li>This is a standalone script ‘Send_mail.py’ which will send the email based on the flags passed to it.</li>
 </ul>
 </div>
+<div class="section" id="developing-the-email-component">
+<h3>Developing the email component<a class="headerlink" href="#developing-the-email-component" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>This component uses the smtp package to send and receive emails.</li>
+<li>When a user logs in the first time, the user token is stored in an encrypted manner in the email(either insti or department) file under the configs folder.</li>
+<li>This token is decrypted just before every call and a request is sent to the smtp server from where the mails are fetched.</li>
+<li>Please go through the moodle component’s source code for more details on parsing and fetching emails.</li>
+<li>To add any extra flags, please do so in the main ‘parser.py’ file.</li>
+<li>A developer can add more functionalities by adding more flags to the existing classes.</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -205,6 +216,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#department-mail">Department mail</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Searching for mails</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Sending mails</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#developing-the-email-component">Developing the email component</a></li>
 </ul>
 </li>
 </ul>

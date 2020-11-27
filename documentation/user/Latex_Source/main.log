@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.9)  18 NOV 2020 11:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.9)  26 NOV 2020 23:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -310,47 +310,57 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [2
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
+
+ []
+
 [3
 
 ]
+Overfull \hbox (266.23001pt too wide) in paragraph at lines 52--53
+\OT1/cmr/m/n/12 form: \OT1/cmr/bx/n/12 wget --no-check-certificate --content-di
+sposition https://raw.githubusercontent.com/RKKUNDU/info-
+ []
+
+[4]
 \openout3 = `main.pyg'.
 
  (./_minted-main/default-pyg-prefix.pygstyle)
 (./_minted-main/default.pygstyle)
-(./_minted-main/4C0BD52AEE67BBBAC3592AE510DA2CD0EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/87B75D07F88FA4644A69DBEAC6A40571EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/D457337703C05A68E5C958564C53C9D7EA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex [4
+(./_minted-main/68415806677B23B0C3A3F4F57C7149A4EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex [5
 
 ])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/0CE0B8CBC7A9D383BFD16AFFA907BB34AA15CF4BA75075E8168D3671BF7EB06
+(./_minted-main/5227AB29555BDA65993B4C9FADBE202BAA15CF4BA75075E8168D3671BF7EB06
 4.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/8E4BE56CA45A3578757B1433114CF8E7EA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex) [5]
+(./_minted-main/6716F513FDEDDACE983C40C57CA46D4DEA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex) [6]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/98F281CB8A8F086445C3A7DD3311206EAA15CF4BA75075E8168D3671BF7EB06
+(./_minted-main/841DC649EBA834FA4D96FADB5C8A6515AA15CF4BA75075E8168D3671BF7EB06
 4.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/C04B944EB5BE23618F1A2E50EE275EB9EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/CA571391AED17CA531F10AD9C335C4B7EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/5BE6259DCE7BCE4C08AE894CE63A0982AA15CF4BA75075E8168D3671BF7EB06
-4.pygtex [6])
+(./_minted-main/46E432665EA7901BA52F438F2C218F38AA15CF4BA75075E8168D3671BF7EB06
+4.pygtex [7])
 \openout3 = `main.pyg'.
 
 
@@ -359,24 +369,24 @@ D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/28AE0F3D9587E801E94A96E55565A5EAAA15CF4BA75075E8168D3671BF7EB06
-4.pygtex [7])
+(./_minted-main/4685113AA21BDE248ED7AE7EFDE06D58AA15CF4BA75075E8168D3671BF7EB06
+4.pygtex [8])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/04E840A82A8A82190FCD74DF138F21D0EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/B234041FC9605E1753D3DBB710B3C823EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/1A36514D6845BEABA2CA43348689F3A4AA15CF4BA75075E8168D3671BF7EB06
+(./_minted-main/08982759C12F432CCD5B8264A1CDC2B8AA15CF4BA75075E8168D3671BF7EB06
 4.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 182--1
+Underfull \hbox (badness 10000) in paragraph at lines 198--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--1
+Underfull \hbox (badness 10000) in paragraph at lines 198--1
 
  []
 
@@ -384,157 +394,186 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--1
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/F8D3249257D55900019A953D067056BEEA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex [8])
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/F510BADE330E865B2BB724ED214595E1AA15CF4BA75075E8168D3671BF7EB06
-4.pygtex)
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/EC1513BB870283E0D8E100643CA88989EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/1233F53177DE461D6B76FAE5D23A8E2BEA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex [9])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/16EC7D01887FAAE2421CFF69B25B26FEAA15CF4BA75075E8168D3671BF7EB06
-4.pygtex) [10]
+(./_minted-main/317D18F28E694FED16DEE01C1D277AD0AA15CF4BA75075E8168D3671BF7EB06
+4.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/199E0E2758396A602829CA535E9A39A9EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/40AAA672E2B83C4A31DC2993CDB80D58EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex [10])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/64851FF3BE6B5017516372F5184D3998AA15CF4BA75075E8168D3671BF7EB06
+4.pygtex) [11]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/52459145BAAD1A5E50B6CA1126002576EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/A6DDB60771180045F9ABFA71846EE4C1EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/6A19F2B0152DD051E0E475CD6F27DEA3EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 261--1
+Underfull \hbox (badness 10000) in paragraph at lines 277--1
 
  []
 
-[11
+[12
 
 ])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/A35A1CE349B87CE5A2B91EF5249B16FBEA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex [12])
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/7E96265502ABEAAF7A64C76F15FAF6B1EA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex)
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/10776E06AE0088A1C0CD2443785493A0EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/558E8B9AE580D6600D8A437845E79358EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex [13])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/9A6ABC8F9E4C260E378B7891A6D5AE52EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/3EFB25795A849E577D7FDE217AB45E31EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/400A39EBB90525922D9D39602DB8F813EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex [14])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F2C347E561D9B63CF0559BB5D6EEA175EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 367--1
+Underfull \hbox (badness 10000) in paragraph at lines 383--1
 
  []
 
-[14])
+[15])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/EF711D4714A7233001D86C27438BE649EA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/8AEC6DBEB98A047D55C261832F010648EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/878968214D8BD9B2DA966746F26F430CEA8C2CB621C77F1A35EDA6E761A8835
+(./_minted-main/DCBB115F80408259E0F59FFE50A620C9EA8C2CB621C77F1A35EDA6E761A8835
 D.pygtex)
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/2828518FC394F0E35BA2ECCE47B081D8EA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex [15])
+(./_minted-main/97BC77F74B0710B13BBBB09CFB026588EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex [16])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/630D9F12F7A60AA8B4A6B873D97D7CEFEA8C2CB621C77F1A35EDA6E761A8835
-D.pygtex) [16]
-Underfull \hbox (badness 10000) in paragraph at lines 435--442
+(./_minted-main/DC70076249AC38F8F7542272FE23C9C5EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex) [17]
+Underfull \hbox (badness 10000) in paragraph at lines 451--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--449
+Underfull \hbox (badness 10000) in paragraph at lines 451--458
+
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/0A8E6F61FF09ED88477F506BBB4592BBEA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/120F910A94384EC3CC04173BF52E42A1EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 472--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--465
+Underfull \hbox (badness 10000) in paragraph at lines 472--1
+
+ []
+
+[18
+
+])
+Underfull \hbox (badness 10000) in paragraph at lines 500--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--465
+Underfull \hbox (badness 10000) in paragraph at lines 500--504
+
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BB84657BCEFDA44EDFDFF7B3C6B81FF5EA8C2CB621C77F1A35EDA6E761A8835
+D.pygtex [19])
+Underfull \hbox (badness 10000) in paragraph at lines 521--531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--465
+Underfull \hbox (badness 10000) in paragraph at lines 521--531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--465
+Underfull \hbox (badness 10000) in paragraph at lines 521--531
 
  []
 
-[17
-
-] [18]
-<whatsappbot.png, id=64, 979.66pt x 916.42375pt>
+[20]
+<whatsappbot.png, id=72, 979.66pt x 916.42375pt>
 File: whatsappbot.png Graphic file (type png)
 <use whatsappbot.png>
-Package pdftex.def Info: whatsappbot.png  used on input line 477.
+Package pdftex.def Info: whatsappbot.png  used on input line 543.
 (pdftex.def)             Requested size: 398.32971pt x 284.52191pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--478
+Underfull \hbox (badness 10000) in paragraph at lines 534--544
 
  []
 
 
-Overfull \hbox (8.32971pt too wide) in paragraph at lines 468--478
+Overfull \hbox (8.32971pt too wide) in paragraph at lines 534--544
 [] 
  []
 
-[19
+[21
 
- <./whatsappbot.png>] [20
+ <./whatsappbot.png>] [22
 
 ] (./main.aux)
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5771 strings out of 483183
- 108481 string characters out of 5966293
- 386281 words of memory out of 5000000
- 20631 multiletter control sequences out of 15000+600000
- 538323 words of font info for 44 fonts, out of 8000000 for 9000
+ 5789 strings out of 483183
+ 109726 string characters out of 5966293
+ 386500 words of memory out of 5000000
+ 20639 multiletter control sequences out of 15000+600000
+ 538660 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,6n,37p,840b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,37p,840b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pramod/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1200.60
-0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (20 pages, 267490 bytes).
+0pk> </home/pramod/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.
+600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (22 pages, 271285 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
