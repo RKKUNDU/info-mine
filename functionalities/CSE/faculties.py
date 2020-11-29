@@ -50,8 +50,8 @@ class Faculties:
                 table.append(faculty)
 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             header = ['User ID', 'Name']
             if with_extension:
                 header.append('Extension')
@@ -146,8 +146,8 @@ class Faculties:
                 cnt += 1
                 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             header = ['User ID', 'Name']
             if with_extension:
                 header.append('Extension')

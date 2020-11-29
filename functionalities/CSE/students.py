@@ -39,8 +39,8 @@ class Students:
                     table.append([x['userid'], name])
 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             if with_advisor and with_interests:
                 print(tabulate(table, headers = ['User ID', 'Name', 'Advisor', 'Interests']))
             elif with_advisor:
@@ -128,8 +128,8 @@ class Students:
                 cnt += 1
                 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             if with_advisor and with_interests and cnt > 0:
                 print(tabulate(table, headers = ['User ID', 'Name', 'Advisor', 'Interests']))
             elif with_advisor and cnt > 0:

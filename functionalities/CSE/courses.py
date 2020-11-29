@@ -26,8 +26,8 @@ class Courses:
                     table.append(["Spring", x['crsecode'], x['crsename'], x['springinstructor']])
 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             print(tabulate(table, headers = ['Semester', 'Course Code', 'Course Name', 'Instructor Name']))
 
     def show_filtered_courses(self, filter, with_details = False, with_description = False, with_prereqs = False, with_textrefs = False, in_autumn = True, in_spring = True):
@@ -129,8 +129,8 @@ class Courses:
                         table.append(["Spring", x['crsecode'], x['crsename'], x['springinstructor']])
 
         except Exception as err:
-            print(f"Error: {err}")
-        finally:
+            pass
+        else:
             if len(table) > 0:
                 print(tabulate(table, headers = ['Semester', 'Course Code', 'Course Name', 'Instructor Name']))
             elif not (with_details or with_description or with_prereqs or with_textrefs) or cnt == 0:

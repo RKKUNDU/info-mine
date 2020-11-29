@@ -32,7 +32,7 @@ class News:
                     table.append([x['ndate'], bs(x['snippet'], 'html.parser').get_text()])
 
         except Exception as err:
-            print(f"Error: {err}")        
+            pass       
         else:
             if not with_details:
                 print(tabulate(table, headers = ['Date', 'Snippet']))    
@@ -90,7 +90,7 @@ class News:
                     cnt += 1
 
             except Exception as err:
-                print(f"Error: {err}")     
+                pass     
 
         if not with_details and cnt > 0:
             print(tabulate(table, headers = ['Date', 'Snippet']))  
