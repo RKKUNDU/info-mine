@@ -14,12 +14,13 @@ class utils:
         if moodle.get_stored_token() is None or moodle.get_stored_userid is None:
             credential_set = False
             while not credential_set:
-                print("Invalid username/password. Type q or quit to exit")
                 id, password = utils.take_input()
                 if id == 'q' or id == 'quit':
                     exit(0)
 
                 credential_set = moodle.write_credential(id, password)
+                if not credential_set:
+                    print("Invalid username/password. Type q or quit to exit")
 
         return moodle.get_stored_token(), moodle.get_stored_userid()
 
